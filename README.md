@@ -4,7 +4,7 @@ A Flutter widget for entering pin code.
 
 Star 🌟 to show support!
 
-![Image](./image/phoneusage.gif) { width: 200px; }
+<img src="./image/phoneusage.gif" alt="pin usage" width="200"/>
 
 ## Getting Started
 
