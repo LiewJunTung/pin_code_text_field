@@ -46,7 +46,7 @@ class MyHomePageState extends State<MyHomePage> {
       body: Container(
         child: Column(
           children: <Widget>[
-            PinCodeTextField(controller: controller,),
+            PinCodeTextField(controller: controller, hideCharacter: true,),
             RaisedButton(onPressed: (){
               setState(() {
                 this.thisText = controller.text;
