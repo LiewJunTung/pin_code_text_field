@@ -43,18 +43,20 @@ class MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("TEXT"),
       ),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            PinCodeTextField(controller: controller, hideCharacter: true, highlight: true, highlightColor: Colors.blue, maxLength: 5,),
-            RaisedButton(onPressed: (){
-              setState(() {
-                this.thisText = controller.text;
-              });
-
-            }),
-            Text(thisText)
-          ],
+      body: Center(
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              PinCodeTextField(controller: controller, hideCharacter: true, highlight: true, highlightColor: Colors.blue, maxLength: 5, defaultBorderColor: Colors.black,),
+              RaisedButton(onPressed: (){
+                setState(() {
+                  this.thisText = controller.text;
+                });
+              }),
+              Text(thisText)
+            ],
+          ),
         ),
       ),
     );

@@ -2,7 +2,8 @@ library pin_code_text_field;
 
 import 'package:flutter/material.dart';
 
-typedef OnDone = void Function();
+typedef OnDone = void Function(String text);
+typedef PinBoxDecoration = BoxDecoration Function(Color borderColor);
 
 class PinCodeTextField extends StatefulWidget {
   final int maxLength;
@@ -10,7 +11,8 @@ class PinCodeTextField extends StatefulWidget {
   final bool hideCharacter;
   final bool highlight;
   final Color highlightColor;
-  final BoxDecoration boxDecoration;
+  final Color defaultBorderColor;
+  final PinBoxDecoration pinBoxDecoration;
   final OnDone onDone;
 
   const PinCodeTextField(
@@ -20,8 +22,8 @@ class PinCodeTextField extends StatefulWidget {
       this.hideCharacter: false,
       this.highlight: false,
       this.highlightColor,
-      this.boxDecoration,
-      this.onDone})
+      this.pinBoxDecoration,
+      this.onDone, this.defaultBorderColor: Colors.transparent})
       : super(key: key);
 
   @override
@@ -69,10 +71,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
                 FocusScope.of(context).requestFocus(focusNode);
               }
             },
-            child: Container(
-                width: double.infinity,
-                height: 100.0,
-                child: _buildPinCodeRow(context)),
+            child: _buildPinCodeRow(context),
           ),
           Container(
             width: 0.1,
@@ -111,7 +110,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
     });
     if (text.length == widget.maxLength) {
       FocusScope.of(context).requestFocus(FocusNode());
-      widget.onDone();
+      widget.onDone(text);
     }
   }
 
@@ -122,7 +121,8 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
 
     return Row(
         mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         verticalDirection: VerticalDirection.down,
         children: pinCodes);
   }
@@ -136,9 +136,9 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
             (i == text.length - 1 && text.length == widget.maxLength))) {
       borderColor = widget.highlightColor;
     } else {
-      borderColor = Colors.black;
+      borderColor = widget.defaultBorderColor;
     }
-    if (widget.boxDecoration == null) {
+    if (widget.pinBoxDecoration == null) {
       boxDecoration = BoxDecoration(
           border: Border.all(
             color: borderColor,
@@ -146,15 +146,15 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
           ),
           borderRadius: BorderRadius.all(const Radius.circular(5.0)));
     } else {
-      boxDecoration = widget.boxDecoration;
+      boxDecoration = widget.pinBoxDecoration(borderColor);
     }
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4.0),
       child: Container(
         child: Center(child: Text(strList[i])),
         decoration: boxDecoration,
-        width: 50.0,
-        height: 50.0,
+        width: 70.0,
+        height: 100.0,
       ),
     );
   }
