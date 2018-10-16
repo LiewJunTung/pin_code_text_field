@@ -1,10 +1,10 @@
 # pin_code_text_field
 
-A Flutter widget for entering pin code.
+It's a Flutter widget for entering pin code. Suitable for use cases such as login and OTP.
 
 Star 🌟 to show support!
 
-<img src="./image/phoneusage.gif" alt="pin usage" width="25k0"/>
+<img src="https://raw.githubusercontent.com/LiewJunTung/Pin-Code-Text-Field/master/image/phoneusage.gif" alt="pin usage" width="25k0"/>
 
 ## Getting Started
 
