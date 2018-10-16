@@ -1,28 +1,12 @@
 # pin_code_text_field
 
-A widget for entering pin code
+A Flutter widget for entering pin code.
 
-## Installation
-```yaml
-dependencies:
-    pin_code_text_field: 0.0.1
-```
+Star 🌟 to show support!
 
+![Image](./image/phoneusage.gif)
 
-## Usage
-```dart
-...
-Column(
-  children: <Widget>[
-    PinCodeTextField(controller: controller, hideCharacter: true, highlight: true, highlightColor: Colors.blue, maxLength: 5,),
-    RaisedButton(onPressed: (){
-      setState(() {
-        this.thisText = controller.text;
-      });
+## Getting Started
 
-    }),
-    Text(thisText)
-  ],
-  ...
-
-```
+For help getting started with Flutter, view our online
+[documentation](https://flutter.io/).
