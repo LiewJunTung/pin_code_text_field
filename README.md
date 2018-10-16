@@ -4,7 +4,7 @@ It's a Flutter widget for entering pin code. Suitable for use cases such as logi
 
 Star 🌟 to show support!
 
-<img src="https://raw.githubusercontent.com/LiewJunTung/Pin-Code-Text-Field/master/image/phoneusage.gif" alt="pin usage" width="25k0"/>
+<img src="https://raw.githubusercontent.com/LiewJunTung/Pin-Code-Text-Field/master/image/phoneusage.gif" alt="pin usage" width="250"/>
 
 ## Getting Started
 
