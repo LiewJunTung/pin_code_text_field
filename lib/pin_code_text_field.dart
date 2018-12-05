@@ -17,13 +17,14 @@ class PinCodeTextField extends StatefulWidget {
 
   const PinCodeTextField(
       {Key key,
-      this.maxLength: 4,
+      this.maxLength: 6,
       this.controller,
       this.hideCharacter: false,
       this.highlight: false,
       this.highlightColor,
       this.pinBoxDecoration,
-      this.onDone, this.defaultBorderColor: Colors.transparent})
+      this.onDone,
+      this.defaultBorderColor: Colors.transparent})
       : super(key: key);
 
   @override
@@ -151,10 +152,10 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4.0),
       child: Container(
-        child: Center(child: Text(strList[i])),
+        child: Center(child: Text(strList[i], style: TextStyle(fontSize: 18.0),)),
         decoration: boxDecoration,
-        width: 70.0,
-        height: 100.0,
+        width: 50.0,
+        height: 60.0,
       ),
     );
   }
