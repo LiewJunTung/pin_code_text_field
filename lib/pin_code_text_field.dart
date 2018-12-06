@@ -152,7 +152,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4.0),
       child: Container(
-        child: Center(child: Text(strList[i], style: TextStyle(fontSize: 18.0),)),
+        child: Center(child: Text(strList[i], style: TextStyle(fontSize: 20.0),)),
         decoration: boxDecoration,
         width: 50.0,
         height: 60.0,
