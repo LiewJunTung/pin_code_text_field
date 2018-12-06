@@ -112,6 +112,8 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
     if (text.length == widget.maxLength) {
       FocusScope.of(context).requestFocus(FocusNode());
       widget.onDone(text);
+    }else{
+      widget.onDone("");
     }
   }
 
