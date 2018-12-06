@@ -48,8 +48,32 @@ class MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              PinCodeTextField(controller: controller, hideCharacter: true, highlight: true, highlightColor: Colors.blue, maxLength: 5, defaultBorderColor: Colors.black,),
+              PinCodeTextField(
+                controller: controller,
+                hideCharacter: false,
+                highlight: true,
+                highlightColor: Colors.blue,
+                maxLength: 6,
+                defaultBorderColor: Colors.black,
+                onDone: (string) => print(string),
+              ),
               RaisedButton(onPressed: (){
+                // TO TEST AUTO FILL
+                setState(() {
+                  this.thisText = controller.text;
+                });
+              }),
+              RaisedButton(
+                  child: Text("AUTO FILL"),
+                  onPressed: (){
+                // TO TEST AUTO FILL
+                controller.text = "";
+                controller.text = controller.text + "1";
+                controller.text = controller.text + "2";
+                controller.text = controller.text + "3";
+                controller.text = controller.text + "4";
+                controller.text = controller.text + "5";
+                controller.text = controller.text + "6";
                 setState(() {
                   this.thisText = controller.text;
                 });

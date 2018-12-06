@@ -52,6 +52,14 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
         hasFocus = focusNode.hasFocus;
       });
     });
+
+    widget.controller.addListener(() {
+      String text = widget.controller.text;
+      int length = text?.length ?? 0;
+      if (length > widget.maxLength || text.isEmpty)
+        return;
+      _onTextChanged(text);
+    });
   }
 
   @override
@@ -99,21 +107,25 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
   }
 
   void _onTextChanged(text) {
-    setState(() {
-      this.text = text;
-      if (text.length < currentIndex) {
-        strList[text.length] = "";
+    try {
+      setState(() {
+        this.text = text;
+        if (text.length < currentIndex) {
+          strList[text.length] = "";
+        } else {
+          strList[text.length - 1] =
+          widget.hideCharacter ? "\u25CF" : text[text.length - 1];
+        }
+        currentIndex = text.length;
+      });
+      if (text.length == widget.maxLength) {
+//      FocusScope.of(context).requestFocus(FocusNode());
+        widget.onDone(text);
       } else {
-        strList[text.length - 1] =
-            widget.hideCharacter ? "\u25CF" : text[text.length - 1];
+        widget.onDone("");
       }
-      currentIndex = text.length;
-    });
-    if (text.length == widget.maxLength) {
-      FocusScope.of(context).requestFocus(FocusNode());
-      widget.onDone(text);
-    }else{
-      widget.onDone("");
+    } catch (e) {
+      print(e.toString());
     }
   }
 
