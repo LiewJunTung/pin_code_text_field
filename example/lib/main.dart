@@ -49,9 +49,10 @@ class MyHomePageState extends State<MyHomePage> {
               controller: controller,
               hideCharacter: true,
               highlight: true,
-              highlightColor: Colors.blue,
+              highlightColor: Colors.red,
               maxLength: 5,
               maskCharacter: "☆",
+
               pinTextStyle: TextStyle(fontSize: 30.0),
             ),
             RaisedButton(

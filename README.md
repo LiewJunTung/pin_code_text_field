@@ -10,13 +10,16 @@ It's a Flutter widget for entering pin code. Suitable for use cases such as logi
 | hideCharacter | bool | false | Show or hide the pin code |
 | highlight | bool | false | highlight the focused pin box |
 | highlightColor | Color | | Set color of the focused pin box |
-| boxDecoration | BoxDecoration| | Customization for the individual pin boxes. |
+| pinBoxDecoration | BoxDecoration| | Customization for the individual pin boxes. |
 | pinTextStyle | TextStyle | | TextStyle for styling pin characters |
 | maskCharacter | String | "\u25CF" | Special character to mask the pin code. Will only work if `hideCharacter` is set to true |
-| onDone | void Function() | | Callback when the max length of pin code is reached. |
+| pinBoxHeight | double | 70.0 | Height of pin boxes |
+| pinBoxWidth | double | 70.0 | Width of pin boxes |
+| onDone | void Function(String) | | Callback when the max length of pin code is reached. |
 
 ## Example
 ```dart
+
 class MyHomePageState extends State<MyHomePage> {
   TextEditingController controller = TextEditingController();
   String thisText = "234235";
@@ -53,6 +56,7 @@ class MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
 
 ```
 
