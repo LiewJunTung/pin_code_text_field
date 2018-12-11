@@ -26,40 +26,45 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() {
     return MyHomePageState();
   }
-
 }
 
 class MyHomePageState extends State<MyHomePage> {
   TextEditingController controller = TextEditingController();
   String thisText = "234235";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("TEXT"),
       ),
-      body: Center(
-        child: Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              PinCodeTextField(controller: controller, hideCharacter: true, highlight: true, highlightColor: Colors.blue, maxLength: 5, defaultBorderColor: Colors.black,),
-              RaisedButton(onPressed: (){
+      body: Container(
+        child: Column(
+          children: <Widget>[
+            PinCodeTextField(
+              controller: controller,
+              hideCharacter: true,
+              highlight: true,
+              highlightColor: Colors.blue,
+              maxLength: 5,
+              maskCharacter: "☆",
+              pinTextStyle: TextStyle(fontSize: 30.0),
+            ),
+            RaisedButton(
+              onPressed: () {
                 setState(() {
                   this.thisText = controller.text;
                 });
-              }),
-              Text(thisText)
-            ],
-          ),
+              },
+            ),
+            Text(thisText)
+          ],
         ),
       ),
     );
   }
-
 }

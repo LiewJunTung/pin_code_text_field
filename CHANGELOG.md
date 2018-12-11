@@ -1,4 +1,9 @@
-## [0.0.2] - 16 October 2018
+## [1.0.0] - 11 December 2018
+* Added a few text properties
+    * maskCharacter
+    * pinCodeTextStyle
+
+## [0.1.1] - 16 October 2018
 
 * First release of plugin
 

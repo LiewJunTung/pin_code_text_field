@@ -13,6 +13,8 @@ class PinCodeTextField extends StatefulWidget {
   final Color highlightColor;
   final Color defaultBorderColor;
   final PinBoxDecoration pinBoxDecoration;
+  final String maskCharacter;
+  final TextStyle pinTextStyle;
   final OnDone onDone;
 
   const PinCodeTextField(
@@ -23,6 +25,8 @@ class PinCodeTextField extends StatefulWidget {
       this.highlight: false,
       this.highlightColor,
       this.pinBoxDecoration,
+      this.maskCharacter: "\u25CF",
+      this.pinTextStyle,
       this.onDone, this.defaultBorderColor: Colors.transparent})
       : super(key: key);
 
@@ -104,7 +108,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
         strList[text.length] = "";
       } else {
         strList[text.length - 1] =
-            widget.hideCharacter ? "\u25CF" : text[text.length - 1];
+            widget.hideCharacter ? widget.maskCharacter : text[text.length - 1];
       }
       currentIndex = text.length;
     });
@@ -151,7 +155,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4.0),
       child: Container(
-        child: Center(child: Text(strList[i])),
+        child: Center(child: Text(strList[i], style: widget.pinTextStyle,)),
         decoration: boxDecoration,
         width: 70.0,
         height: 100.0,
