@@ -1,4 +1,5 @@
 # pin_code_text_field
+[![Pub](https://img.shields.io/pub/v/pin_code_text_field.svg)](https://pub.dartlang.org/packages/pin_code_text_field)
 
 It's a Flutter widget for entering pin code. Suitable for use cases such as login and OTP.
 
