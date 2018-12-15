@@ -69,9 +69,9 @@ class MyHomePageState extends State<MyHomePage> {
                 });
               },
               pinTextStyle: TextStyle(fontSize: 30.0),
-              pinTextAnimatedSwitcherTransition:
-                  PinCodeTextField.awesomeTransition,
-              pinTextAnimatedSwitcherDuration: Duration(milliseconds: 500),
+//              pinTextAnimatedSwitcherTransition:
+//                  PinCodeTextField.awesomeTransition,
+//              pinTextAnimatedSwitcherDuration: Duration(milliseconds: 500),
             ),
             Visibility(
               child: Text(

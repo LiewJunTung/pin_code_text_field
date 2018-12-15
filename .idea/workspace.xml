@@ -8,7 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="454e3a70-107c-46fa-b354-df0efe7224c0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pin_code_text_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pin_code_text_field.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -23,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.dart" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="61" column="46" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
+            <state relative-caret-position="578">
+              <caret line="74" column="14" lean-forward="true" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -47,8 +50,8 @@
       <file leaf-file-name="pin_code_text_field.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/pin_code_text_field.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1395">
-              <caret line="93" selection-start-line="93" selection-end-line="93" />
+            <state relative-caret-position="362">
+              <caret line="217" column="58" selection-start-line="217" selection-start-column="58" selection-end-line="217" selection-end-column="58" />
               <folding>
                 <element signature="e#30#69#0" expanded="true" />
               </folding>
@@ -63,18 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="phoneusage.gif" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/image/phoneusage.gif">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="scroll_view.dart" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/JT_APPs/flutter/packages/flutter/lib/src/widgets/scroll_view.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
-              <caret line="726" column="28" lean-forward="true" selection-start-line="726" selection-start-column="28" selection-end-line="726" selection-end-column="28" />
+              <caret line="726" column="28" selection-start-line="726" selection-start-column="28" selection-end-line="726" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -88,12 +84,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="text.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/JT_APPs/flutter/packages/flutter/lib/src/widgets/text.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="219" column="4" selection-start-line="219" selection-start-column="4" selection-end-line="219" selection-end-column="12" />
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="15">
+                <caret line="27" column="7" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="103" />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="phoneusage.gif" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image/phoneusage.gif">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -106,12 +114,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CHANGELOG.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CHANGELOG.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="270">
-                <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+                <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -142,6 +150,8 @@
       <find>field</find>
       <find>key</find>
       <find>newWid</find>
+      <find>AnimatedSw</find>
+      <find>pinTextAnimatedSwitcherTransition</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,10 +166,10 @@
         <option value="$PROJECT_DIR$/example/test/widget_test.dart" />
         <option value="$PROJECT_DIR$/test/pin_code_text_field_test.dart" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/CHANGELOG.md" />
+        <option value="$PROJECT_DIR$/example/lib/main.dart" />
         <option value="$PROJECT_DIR$/lib/pin_code_text_field.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/example/lib/main.dart" />
+        <option value="$PROJECT_DIR$/CHANGELOG.md" />
       </list>
     </option>
   </component>
@@ -213,6 +223,9 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/image" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/image" />
     </key>
@@ -380,7 +393,21 @@
       <option name="project" value="LOCAL" />
       <updated>1544864581345</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Updated readme image">
+      <created>1544865128756</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1544865128756</updated>
+    </task>
+    <task id="LOCAL-00013" summary="updated another gif">
+      <created>1544865423228</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1544865423228</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -393,7 +420,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49841145" visible="true" weight="0.32948422" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49841145" weight="0.32948422" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -402,11 +429,11 @@
       <window_info anchor="bottom" id="Dart Analysis" order="7" sideWeight="0.4992057" weight="0.3287144" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49682286" weight="0.32948422" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4988086" weight="0.3287144" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49642575" weight="0.32717475" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49642575" visible="true" weight="0.32717475" />
       <window_info anchor="right" id="Flutter Outline" order="3" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25774425" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25774425" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4988086" weight="0.3995381" />
@@ -492,7 +519,9 @@
     <MESSAGE value="Added a few properties. Updated README" />
     <MESSAGE value="Updated to the 1.0.1" />
     <MESSAGE value="Updated to the 1.1.0 with animation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated to the 1.1.0 with animation" />
+    <MESSAGE value="Updated readme image" />
+    <MESSAGE value="updated another gif" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated another gif" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -794,18 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="270">
-            <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/JT_APPs/flutter/packages/flutter/lib/src/material/text_field.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
@@ -830,7 +847,7 @@
     <entry file="file://$USER_HOME$/JT_APPs/flutter/packages/flutter/lib/src/widgets/scroll_view.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
-          <caret line="726" column="28" lean-forward="true" selection-start-line="726" selection-start-column="28" selection-end-line="726" selection-end-column="28" />
+          <caret line="726" column="28" selection-start-line="726" selection-start-column="28" selection-end-line="726" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -838,42 +855,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="3625" column="79" selection-start-line="3625" selection-start-column="46" selection-end-line="3625" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/JT_APPs/flutter/packages/flutter/lib/src/widgets/binding.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="708" column="6" selection-start-line="708" selection-start-column="6" selection-end-line="708" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="270">
-            <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pin_code_text_field.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-          <folding>
-            <element signature="e#30#69#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,11 +870,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="61" column="46" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
+        <state relative-caret-position="578">
+          <caret line="74" column="14" lean-forward="true" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/JT_APPs/flutter/packages/flutter/lib/src/widgets/binding.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="708" column="6" selection-start-line="708" selection-start-column="6" selection-end-line="708" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pin_code_text_field.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="217" column="58" selection-start-line="217" selection-start-column="58" selection-end-line="217" selection-end-column="58" />
+          <folding>
+            <element signature="e#30#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="15">
+            <caret line="27" column="7" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="103" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="270">
+            <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
         </state>
       </provider>
     </entry>

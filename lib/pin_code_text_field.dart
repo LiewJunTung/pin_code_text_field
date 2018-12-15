@@ -76,6 +76,11 @@ class PinCodeTextField extends StatefulWidget {
     );
   }
 
+  static Widget defaultNoTransition(
+      Widget child, Animation<double> animation) {
+    return child;
+  }
+
   static Widget defaultRotateTransition(
       Widget child, Animation<double> animation) {
     return RotationTransition(child: child, turns: animation);
@@ -210,22 +215,34 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
       padding: const EdgeInsets.symmetric(horizontal: 4.0),
       child: Container(
         key: ValueKey<String>("container$i"),
-        child: Center(child: AnimatedSwitcher(
-          duration: widget.pinTextAnimatedSwitcherDuration,
-          transitionBuilder: widget.pinTextAnimatedSwitcherTransition ??
-              (Widget child, Animation<double> animation) {
-                return child;
-              },
-          child: Text(
-            strList[i],
-            key: ValueKey<String>("${strList[i]}$i"),
-            style: widget.pinTextStyle,
-          ),
-        )),
+        child: Center(child: animatedTextBox(strList[i], i)),
         decoration: boxDecoration,
         width: widget.pinBoxWidth,
         height: widget.pinBoxHeight,
       ),
     );
+  }
+
+  Widget animatedTextBox(String text, int i){
+    if (widget.pinTextAnimatedSwitcherTransition != null) {
+      return AnimatedSwitcher(
+        duration: widget.pinTextAnimatedSwitcherDuration,
+        transitionBuilder: widget.pinTextAnimatedSwitcherTransition ??
+                (Widget child, Animation<double> animation) {
+              return child;
+            },
+        child: Text(
+          text,
+          key: ValueKey<String>("${text}$i"),
+          style: widget.pinTextStyle,
+        ),
+      );
+    } else {
+      return Text(
+        text,
+        key: ValueKey<String>("${strList[i]}$i"),
+        style: widget.pinTextStyle,
+      );
+    }
   }
 }

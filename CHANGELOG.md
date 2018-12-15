@@ -1,3 +1,6 @@
+## [1.1.1] - 15 December 2018
+* minor bug fix
+
 ## [1.1.0] - 15 December 2018
 Added customizable animation on texts
 * added errorBorderColor
