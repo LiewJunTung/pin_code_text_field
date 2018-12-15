@@ -73,16 +73,14 @@ class MyHomePageState extends State<MyHomePage> {
               hasTextBorderColor: Colors.green,
               maxLength: 5,
               hasError: hasError,
-              maskCharacter: "🍎",
               onTextChanged: (text) {
                 setState(() {
                   hasError = false;
                 });
               },
               pinTextStyle: TextStyle(fontSize: 30.0),
-//              pinTextAnimatedSwitcherTransition:
-//                  PinCodeTextField.awesomeTransition,
-//              pinTextAnimatedSwitcherDuration: Duration(milliseconds: 500),
+              pinTextAnimatedSwitcherTransition: PinCodeTextField.defaultScalingTransition,
+              pinTextAnimatedSwitcherDuration: Duration(milliseconds: 500),
             ),
             Visibility(
               child: Text(

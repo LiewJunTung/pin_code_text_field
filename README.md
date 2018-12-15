@@ -29,41 +29,84 @@ It's a Flutter widget for entering pin code. Suitable for use cases such as logi
 
 class MyHomePageState extends State<MyHomePage> {
   TextEditingController controller = TextEditingController();
-  String thisText = "234235";
+  String thisText = "";
+
+  bool hasError = false;
+  String errorMessage;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("TEXT"),
+        title: Text("Pin Code Text Field Example"),
       ),
       body: Container(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(bottom: 60.0),
+              child: Text(thisText, style: Theme.of(context).textTheme.title),
+            ),
             PinCodeTextField(
               controller: controller,
               hideCharacter: true,
               highlight: true,
               highlightColor: Colors.blue,
+              defaultBorderColor: Colors.black,
+              hasTextBorderColor: Colors.green,
               maxLength: 5,
-              maskCharacter: "☆",
-              pinTextStyle: TextStyle(fontSize: 30.0),
-            ),
-            RaisedButton(
-              onPressed: () {
+              hasError: hasError,
+              onTextChanged: (text) {
                 setState(() {
-                  this.thisText = controller.text;
+                  hasError = false;
                 });
               },
+              pinTextStyle: TextStyle(fontSize: 30.0),
+              pinTextAnimatedSwitcherTransition: PinCodeTextField.defaultScalingTransition,
+              pinTextAnimatedSwitcherDuration: Duration(milliseconds: 500),
             ),
-            Text(thisText)
+            Visibility(
+              child: Text(
+                "Wrong PIN!",
+                style: TextStyle(color: Colors.red),
+              ),
+              visible: hasError,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 32.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  MaterialButton(
+                    color: Colors.blue,
+                    textColor: Colors.white,
+                    child: Text("SUBMIT"),
+                    onPressed: () {
+                      setState(() {
+                        this.thisText = controller.text;
+                      });
+                    },
+                  ),
+                  MaterialButton(
+                    color: Colors.red,
+                    textColor: Colors.white,
+                    child: Text("SUBMIT Error"),
+                    onPressed: () {
+                      setState(() {
+                        this.hasError = true;
+                      });
+                    },
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
     );
   }
 }
-
 
 ```
 
