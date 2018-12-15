@@ -1,3 +1,11 @@
+## [1.1.0] - 15 December 2018
+Added customizable animation on texts
+* added errorBorderColor
+* added hasTextBorderColor
+* added onTextChanged
+* added pinTextAnimatedSwitcherTransition
+* added pinTextAnimatedSwitcherDuration
+
 ## [1.0.0] - 11 December 2018
 * Added a few text properties
     * maskCharacter
