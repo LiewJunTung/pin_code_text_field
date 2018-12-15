@@ -68,8 +68,10 @@ class MyHomePageState extends State<MyHomePage> {
 ```
 
 ## Wishlist
-1. Localization (L-R, R-L)
-2. Highlight properties
+1. ~~Localization (L-R, R-L)~~
+2. Highlight animation
+3. Pin Box animation
+
 
 Star 🌟 to show support!
 
