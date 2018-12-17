@@ -1,3 +1,7 @@
+## [1.1.2] - 17 December 2018
+* Refactored provided `PinBoxDecoration` to `ProvidedPinBoxDecoration`
+* Refactored provided `PinBoxTextAnimation` to `ProvidedPinBoxTextAnimation`
+
 ## [1.1.1] - 15 December 2018
 * minor bug fix
 

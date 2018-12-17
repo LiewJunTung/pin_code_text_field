@@ -73,13 +73,15 @@ class MyHomePageState extends State<MyHomePage> {
               hasTextBorderColor: Colors.green,
               maxLength: 5,
               hasError: hasError,
+              maskCharacter: "\u25CF",
               onTextChanged: (text) {
                 setState(() {
                   hasError = false;
                 });
               },
+              pinBoxDecoration: ProvidedPinBoxDecoration.underlinedPinBoxDecoration,
               pinTextStyle: TextStyle(fontSize: 30.0),
-              pinTextAnimatedSwitcherTransition: PinCodeTextField.defaultScalingTransition,
+              pinTextAnimatedSwitcherTransition: ProvidedPinBoxTextAnimation.scalingTransition,
               pinTextAnimatedSwitcherDuration: Duration(milliseconds: 500),
             ),
             Visibility(

@@ -7,19 +7,19 @@ It's a Flutter widget for entering pin code. Suitable for use cases such as logi
 ## API
 | name | type | default | description |
 | --- | --- | --- | --- |
-| maxLength | int | 4 | The total length of pin number & the number of pin boxes |
-| hideCharacter | bool | false | Show or hide the pin code |
-| highlight | bool | false | highlight the focused pin box |
-| highlightColor | Color | Colors.black | Set color of the focused pin box |
-| pinBoxDecoration | BoxDecoration| | Customization for the individual pin boxes. |
-| pinTextStyle | TextStyle | | TextStyle for styling pin characters |
-| maskCharacter | String | "\u25CF" | Special character to mask the pin code. Will only work if `hideCharacter` is set to true |
-| pinBoxHeight | double | 70.0 | Height of pin boxes |
-| pinBoxWidth | double | 70.0 | Width of pin boxes |
+| maxLength | int | 4 | The total length of pin number & the number of pin boxes. |
+| hideCharacter | bool | false | Show or hide the pin code. |
+| highlight | bool | false | highlight the focused pin box. |
+| highlightColor | Color | Colors.black | Set color of the focused pin box. |
+| pinBoxDecoration | BoxDecoration| ProvidedPinBoxDecoration._defaultPinBoxDecoration | Customization for the individual pin boxes. Check `ProvidedPinBoxDecoration` for possible options. |
+| pinTextStyle | TextStyle | | TextStyle for styling pin characters. |
+| maskCharacter | String | "\u25CF" | Special character to mask the pin code. Will only work if `hideCharacter` is set to `true`. |
+| pinBoxHeight | double | 70.0 | Height of pin boxes. |
+| pinBoxWidth | double | 70.0 | Width of pin boxes. |
 | onDone | void Function(String) | | Callback when the max length of pin code is reached. |
-| hasTextBorderColor | Color | Colors.black | Set color of pin box containing text |
+| hasTextBorderColor | Color | Colors.black | Set color of pin box containing text. |
 | pinTextAnimatedSwitcherTransition | Function(Widget child, Animation<double> animation) | | Animation of text appearing/disappearing, you can write your own or use a few presets: 1. PinCodeTextField.awesomeTransition 2. PinCodeTextField.defaultScalingTransition  3. PinCodeTextField.defaultRotateTransition|
-| pinTextAnimatedSwitcherDuration | Duration | const Duration() | Duration of pinTextAnimatedSwitcherTransition |
+| pinTextAnimatedSwitcherDuration | Duration | const Duration() | Duration of pinTextAnimatedSwitcherTransition. Check `ProvidedPinBoxTextAnimation` for possible options. |
 | errorBorderColor | Color | Colors.red | Highlight all textboxes to this color if hasError is set to `true`
 | onTextChange | Function(String) | | callback that returns a text on input |
 | hasError | bool | false | set all border color to `errorBorderColor` |
