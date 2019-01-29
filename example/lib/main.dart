@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() => runApp(new MyApp());
 
@@ -10,16 +9,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Flutter Demo',
-      localizationsDelegates: [
-        // ... app-specific localization delegate[s] here
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      supportedLocales: [
-        const Locale('en', 'US'), // English
-        const Locale('he', 'IL'), // Hebrew
-        // ... other locales the app supports
-      ],
       theme: new ThemeData(
         // This is the theme of your application.
         //
@@ -65,6 +54,7 @@ class MyHomePageState extends State<MyHomePage> {
               child: Text(thisText, style: Theme.of(context).textTheme.title),
             ),
             PinCodeTextField(
+              autofocus: true,
               controller: controller,
               hideCharacter: true,
               highlight: true,

@@ -1,3 +1,6 @@
+## [1.1.3] - 29 January 2018
+* Added `autofocus` property
+
 ## [1.1.2] - 17 December 2018
 * Refactored provided `PinBoxDecoration` to `ProvidedPinBoxDecoration`
 * Refactored provided `PinBoxTextAnimation` to `ProvidedPinBoxTextAnimation`

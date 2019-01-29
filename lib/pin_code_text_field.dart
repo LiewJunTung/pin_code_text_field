@@ -82,6 +82,7 @@ class PinCodeTextField extends StatefulWidget {
   final Color errorBorderColor;
   final Color hasTextBorderColor;
   final Function(String) onTextChanged;
+  final bool autofocus;
   final AnimatedSwitcherTransitionBuilder pinTextAnimatedSwitcherTransition;
   final Duration pinTextAnimatedSwitcherDuration;
 
@@ -105,6 +106,7 @@ class PinCodeTextField extends StatefulWidget {
     this.hasError: false,
     this.errorBorderColor: Colors.red,
     this.onTextChanged,
+    this.autofocus: false,
   }) : super(key: key);
 
   @override
@@ -169,6 +171,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
       width: 0.1,
       height: 0.1,
       child: TextField(
+        autofocus: widget.autofocus,
         focusNode: focusNode,
         controller: widget.controller,
         keyboardType: TextInputType.number,

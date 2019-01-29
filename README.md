@@ -23,6 +23,7 @@ It's a Flutter widget for entering pin code. Suitable for use cases such as logi
 | errorBorderColor | Color | Colors.red | Highlight all textboxes to this color if hasError is set to `true`
 | onTextChange | Function(String) | | callback that returns a text on input |
 | hasError | bool | false | set all border color to `errorBorderColor` |
+| autofocus | bool | false | Autofocus on view entered |
 
 ## Example
 ```dart
