@@ -48,6 +48,7 @@ class MyHomePageState extends State<MyHomePage> {
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(bottom: 60.0),
@@ -61,14 +62,15 @@ class MyHomePageState extends State<MyHomePage> {
               highlightColor: Colors.blue,
               defaultBorderColor: Colors.black,
               hasTextBorderColor: Colors.green,
-              maxLength: 5,
+              maxLength: 8,
               hasError: hasError,
-              maskCharacter: "\u25CF",
+              maskCharacter: "😎",
               onTextChanged: (text) {
                 setState(() {
                   hasError = false;
                 });
               },
+              wrapAlignment: WrapAlignment.start,
               pinBoxDecoration: ProvidedPinBoxDecoration.underlinedPinBoxDecoration,
               pinTextStyle: TextStyle(fontSize: 30.0),
               pinTextAnimatedSwitcherTransition: ProvidedPinBoxTextAnimation.scalingTransition,

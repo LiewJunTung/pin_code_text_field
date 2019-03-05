@@ -27,6 +27,7 @@ It's a Flutter widget for entering pin code. Suitable for use cases such as logi
 | onTextChange | Function(String) | | callback that returns a text on input |
 | hasError | bool | false | set all border color to `errorBorderColor` |
 | autofocus | bool | false | Autofocus on view entered |
+| wrapAlignment | WrapAlignment | WrapAlignment.start | Alignment of the wrapped pin boxes |
 
 ## Example
 ```dart

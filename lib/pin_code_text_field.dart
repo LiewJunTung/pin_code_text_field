@@ -1,5 +1,7 @@
 library pin_code_text_field;
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/animation.dart';
 
@@ -85,6 +87,7 @@ class PinCodeTextField extends StatefulWidget {
   final bool autofocus;
   final AnimatedSwitcherTransitionBuilder pinTextAnimatedSwitcherTransition;
   final Duration pinTextAnimatedSwitcherDuration;
+  final WrapAlignment wrapAlignment;
 
   const PinCodeTextField({
     Key key,
@@ -107,6 +110,7 @@ class PinCodeTextField extends StatefulWidget {
     this.errorBorderColor: Colors.red,
     this.onTextChanged,
     this.autofocus: false,
+    this.wrapAlignment: WrapAlignment.start,
   }) : super(key: key);
 
   @override
@@ -213,12 +217,12 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
     List<Widget> pinCodes = List.generate(widget.maxLength, (int i) {
       return _buildPinCode(i, context);
     });
-    return Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        verticalDirection: VerticalDirection.down,
-        children: pinCodes);
+    return Wrap(
+      direction: Axis.horizontal,
+      alignment: widget.wrapAlignment,
+      verticalDirection: VerticalDirection.down,
+      children: pinCodes,
+    );
   }
 
   Widget _buildPinCode(int i, BuildContext context) {
