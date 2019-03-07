@@ -1,5 +1,5 @@
 name: pin_code_text_field
-description: A highly customisable Flutter widget for entering pin code. Suitable for use cases such as login and OTP.
+description: A beautiful and highly customisable Flutter widget for entering pin code. Suitable for use cases such as login and OTP.
 version: 1.2.1
 author: Liew Jun Tung <liewjuntung@gmail.com>
 homepage: https://github.com/LiewJunTung/Pin-Code-Text-Field

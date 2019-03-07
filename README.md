@@ -28,7 +28,7 @@ It's a Flutter widget for entering pin code. Suitable for use cases such as logi
 | hasError | bool | false | set all border color to `errorBorderColor` |
 | autofocus | bool | false | Autofocus on view entered |
 | wrapAlignment | WrapAlignment | WrapAlignment.start | Alignment of the wrapped pin boxes |
-| autoAdjustWidth | bool | false | Auto adjust width of pin box |
+| pinCodeTextFieldLayoutType | PinCodeTextFieldLayoutType | PinCodeTextFieldLayoutType.NORMAL | Auto adjust width with `PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH`, wrap the pin box row with `PinCodeTextFieldLayoutType.WRAP` |
 
 ## Example
 ```dart
@@ -36,9 +36,11 @@ It's a Flutter widget for entering pin code. Suitable for use cases such as logi
 class MyHomePageState extends State<MyHomePage> {
   TextEditingController controller = TextEditingController();
   String thisText = "";
+  int pinLength = 4;
 
   bool hasError = false;
   String errorMessage;
+
 
   @override
   Widget build(BuildContext context) {
@@ -47,67 +49,99 @@ class MyHomePageState extends State<MyHomePage> {
         title: Text("Pin Code Text Field Example"),
       ),
       body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(bottom: 60.0),
-              child: Text(thisText, style: Theme.of(context).textTheme.title),
-            ),
-            PinCodeTextField(
-              controller: controller,
-              hideCharacter: true,
-              highlight: true,
-              highlightColor: Colors.blue,
-              defaultBorderColor: Colors.black,
-              hasTextBorderColor: Colors.green,
-              maxLength: 5,
-              hasError: hasError,
-              onTextChanged: (text) {
-                setState(() {
-                  hasError = false;
-                });
-              },
-              pinTextStyle: TextStyle(fontSize: 30.0),
-              pinTextAnimatedSwitcherTransition: PinCodeTextField.defaultScalingTransition,
-              pinTextAnimatedSwitcherDuration: Duration(milliseconds: 500),
-            ),
-            Visibility(
-              child: Text(
-                "Wrong PIN!",
-                style: TextStyle(color: Colors.red),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(bottom: 60.0),
+                child: Text(thisText, style: Theme.of(context).textTheme.title),
               ),
-              visible: hasError,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 32.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  MaterialButton(
-                    color: Colors.blue,
-                    textColor: Colors.white,
-                    child: Text("SUBMIT"),
-                    onPressed: () {
-                      setState(() {
-                        this.thisText = controller.text;
-                      });
-                    },
-                  ),
-                  MaterialButton(
-                    color: Colors.red,
-                    textColor: Colors.white,
-                    child: Text("SUBMIT Error"),
-                    onPressed: () {
-                      setState(() {
-                        this.hasError = true;
-                      });
-                    },
-                  ),
-                ],
+              PinCodeTextField(
+                autofocus: false,
+                controller: controller,
+                hideCharacter: true,
+                highlight: true,
+                highlightColor: Colors.blue,
+                defaultBorderColor: Colors.black,
+                hasTextBorderColor: Colors.green,
+                maxLength: pinLength,
+                hasError: hasError,
+                maskCharacter: "😎",
+
+                onTextChanged: (text) {
+                  setState(() {
+                    hasError = false;
+                  });
+                },
+                onDone: (text){
+                  print("DONE $text");
+                },
+                pinCodeTextFieldLayoutType: PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH,
+                wrapAlignment: WrapAlignment.start,
+                pinBoxDecoration: ProvidedPinBoxDecoration.underlinedPinBoxDecoration,
+                pinTextStyle: TextStyle(fontSize: 30.0),
+                pinTextAnimatedSwitcherTransition: ProvidedPinBoxTextAnimation.scalingTransition,
+                pinTextAnimatedSwitcherDuration: Duration(milliseconds: 300),
               ),
-            )
-          ],
+              Visibility(
+                child: Text(
+                  "Wrong PIN!",
+                  style: TextStyle(color: Colors.red),
+                ),
+                visible: hasError,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 32.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    MaterialButton(
+                      color: Colors.blue,
+                      textColor: Colors.white,
+                      child: Text("+"),
+                      onPressed: () {
+                        setState(() {
+                          this.pinLength++;
+                        });
+                      },
+                    ),
+                    MaterialButton(
+                      color: Colors.blue,
+                      textColor: Colors.white,
+                      child: Text("-"),
+                      onPressed: () {
+                        setState(() {
+                          this.pinLength--;
+                        });
+                      },
+                    ),
+                    MaterialButton(
+                      color: Colors.blue,
+                      textColor: Colors.white,
+                      child: Text("SUBMIT"),
+                      onPressed: () {
+                        setState(() {
+                          this.thisText = controller.text;
+                        });
+                      },
+                    ),
+                    MaterialButton(
+                      color: Colors.red,
+                      textColor: Colors.white,
+                      child: Text("SUBMIT Error"),
+                      onPressed: () {
+                        setState(() {
+                          this.hasError = true;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -56,7 +56,10 @@ class MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(bottom: 60.0),
-                child: Text(thisText, style: Theme.of(context).textTheme.title),
+                child: Text(thisText, style: Theme
+                    .of(context)
+                    .textTheme
+                    .title),
               ),
               PinCodeTextField(
                 autofocus: false,
@@ -69,21 +72,23 @@ class MyHomePageState extends State<MyHomePage> {
                 maxLength: pinLength,
                 hasError: hasError,
                 maskCharacter: "😎",
-
                 onTextChanged: (text) {
                   setState(() {
                     hasError = false;
+                    thisText = text;
                   });
                 },
-                onDone: (text){
+                onDone: (text) {
                   print("DONE $text");
                 },
-                isWrap: true,
-                autoAdjustWidth: true,
+                pinCodeTextFieldLayoutType: PinCodeTextFieldLayoutType
+                    .AUTO_ADJUST_WIDTH,
                 wrapAlignment: WrapAlignment.start,
-                pinBoxDecoration: ProvidedPinBoxDecoration.underlinedPinBoxDecoration,
+                pinBoxDecoration: ProvidedPinBoxDecoration
+                    .underlinedPinBoxDecoration,
                 pinTextStyle: TextStyle(fontSize: 30.0),
-                pinTextAnimatedSwitcherTransition: ProvidedPinBoxTextAnimation.scalingTransition,
+                pinTextAnimatedSwitcherTransition: ProvidedPinBoxTextAnimation
+                    .scalingTransition,
                 pinTextAnimatedSwitcherDuration: Duration(milliseconds: 300),
               ),
               Visibility(

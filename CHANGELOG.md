@@ -1,5 +1,6 @@
 ## [1.2.1] - 6 March 2018
-* Added `autoAdjustWidth` to adjust width on pin box
+* Added `PinCodeTextFieldLayoutType` to adjust type of layouts such as 
+auto adjust width or wrap 
 
 ## [1.2.0] - 5 March 2018
 * Use `Wrap` instead of `Row` to display the Pin boxes

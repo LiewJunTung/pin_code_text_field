@@ -88,8 +88,7 @@ class PinCodeTextField extends StatefulWidget {
   final AnimatedSwitcherTransitionBuilder pinTextAnimatedSwitcherTransition;
   final Duration pinTextAnimatedSwitcherDuration;
   final WrapAlignment wrapAlignment;
-  final bool isWrap;
-  final bool autoAdjustWidth;
+  final PinCodeTextFieldLayoutType pinCodeTextFieldLayoutType;
 
   const PinCodeTextField({
     Key key,
@@ -113,8 +112,7 @@ class PinCodeTextField extends StatefulWidget {
     this.onTextChanged,
     this.autofocus: false,
     this.wrapAlignment: WrapAlignment.start,
-    this.isWrap: true,
-    this.autoAdjustWidth: false,
+    this.pinCodeTextFieldLayoutType: PinCodeTextFieldLayoutType.NORMAL,
   }) : super(key: key);
 
   @override
@@ -132,24 +130,47 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
   double pinWidth;
   double screenWidth;
 
+  @override
+  void didUpdateWidget(PinCodeTextField oldWidget) {
+    if (oldWidget.maxLength < widget.maxLength) {
+      setState(() {
+        currentIndex = text.length;
+      });
+      widget.controller.text = text;
+      widget.controller.selection =
+          TextSelection.collapsed(offset: text.length);
+    } else if (oldWidget.maxLength > widget.maxLength &&
+        widget.maxLength > 0 &&
+        text.length > 0 &&
+        text.length > widget.maxLength) {
+      setState(() {
+        text = text.substring(0, widget.maxLength);
+        currentIndex = text.length;
+      });
+      widget.controller.text = text;
+      widget.controller.selection =
+          TextSelection.collapsed(offset: text.length);
+    }
+  }
+
   _calculateStrList() async {
 //    strList.length = widget.maxLength;
     if (strList.length > widget.maxLength) {
       strList.length = widget.maxLength;
     }
-    while (strList.length < widget.maxLength){
+    while (strList.length < widget.maxLength) {
       strList.add("");
     }
-
   }
 
   _calculatePinWidth() async {
-    if (widget.autoAdjustWidth && !widget.isWrap) {
+    if (widget.pinCodeTextFieldLayoutType ==
+        PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH) {
       screenWidth = MediaQuery.of(context).size.width;
       var tempPinWidth = widget.pinBoxWidth;
       var maxLength = widget.maxLength;
       while ((tempPinWidth * maxLength) > screenWidth) {
-        tempPinWidth-=4;
+        tempPinWidth -= 4;
       }
       tempPinWidth -= 10;
       setState(() {
@@ -232,16 +253,13 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
     }
     setState(() {
       this.text = text;
-//      print(text);
       if (text.length < currentIndex) {
-//        print("Rchoch");
         strList[text.length] = "";
       } else {
         strList[text.length - 1] =
             widget.hideCharacter ? widget.maskCharacter : text[text.length - 1];
       }
       currentIndex = text.length;
-
     });
     if (text.length == widget.maxLength) {
       FocusScope.of(context).requestFocus(FocusNode());
@@ -255,7 +273,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
     List<Widget> pinCodes = List.generate(widget.maxLength, (int i) {
       return _buildPinCode(i, context);
     });
-    return widget.isWrap && !widget.autoAdjustWidth
+    return widget.pinCodeTextFieldLayoutType == PinCodeTextFieldLayoutType.WRAP
         ? Wrap(
             direction: Axis.horizontal,
             alignment: widget.wrapAlignment,
@@ -328,3 +346,5 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
     }
   }
 }
+
+enum PinCodeTextFieldLayoutType { NORMAL, WRAP, AUTO_ADJUST_WIDTH }
