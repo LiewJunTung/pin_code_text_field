@@ -28,6 +28,7 @@ It's a Flutter widget for entering pin code. Suitable for use cases such as logi
 | hasError | bool | false | set all border color to `errorBorderColor` |
 | autofocus | bool | false | Autofocus on view entered |
 | wrapAlignment | WrapAlignment | WrapAlignment.start | Alignment of the wrapped pin boxes |
+| autoAdjustWidth | bool | false | Auto adjust width of pin box |
 
 ## Example
 ```dart

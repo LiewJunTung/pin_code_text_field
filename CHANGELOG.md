@@ -1,5 +1,9 @@
+## [1.2.1] - 6 March 2018
+* Added `autoAdjustWidth` to adjust width on pin box
+
 ## [1.2.0] - 5 March 2018
 * Use `Wrap` instead of `Row` to display the Pin boxes
+
 
 ## [1.1.3] - 29 January 2018
 * Added `autofocus` property
