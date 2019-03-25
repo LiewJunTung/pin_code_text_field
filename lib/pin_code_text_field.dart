@@ -193,6 +193,12 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
       });
     });
   }
+  
+  @override
+  void dispose() {
+    focusNode?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
