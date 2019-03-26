@@ -30,6 +30,7 @@ import 'package:pin_code_text_field/pin_code_text_field.dart';
 ## API
 | name | type | default | description |
 | --- | --- | --- | --- |
+| isCupertino | bool | false | Application wrapped in `CupertinoApp` instead `MaterialApp` |
 | maxLength | int | 4 | The total length of pin number & the number of pin boxes. |
 | hideCharacter | bool | false | Show or hide the pin code. |
 | highlight | bool | false | highlight the focused pin box. |
