@@ -187,4 +187,5 @@ Star 🌟 to show support!
 <img src="https://raw.githubusercontent.com/LiewJunTung/Pin-Code-Text-Field/master/image/ipad.gif" alt="pin usage" width="500"/>
 
 ## More information
-[documentation](https://flutter.io/).
+[Pub package](https://pub.dartlang.org/packages/pin_code_text_field)
+[Flutter documentation](https://flutter.io/).
