@@ -176,6 +176,10 @@ class MyHomePageState extends State<MyHomePage> {
 2. Highlight animation
 3. Pin Box animation
 
+## Contributors
+1. [Liew Jun Tung](https://github.com/LiewJunTung)
+2. [Serge Shkurko](https://github.com/SergeShkurko)
+3. [Angga Dwi Arifandi](https://github.com/blackmenthor)
 
 Star 🌟 to show support!
 

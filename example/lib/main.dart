@@ -1,56 +1,54 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 
 void main() => runApp(new MyApp());
 
-class MyApp extends StatelessWidget {
+
+
+class MyApp extends StatefulWidget {
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Flutter Demo',
-      theme: new ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
-        // counter didn't reset back to zero; the application is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: new MyHomePage(),
-    );
-  }
+  _MyAppState createState() => _MyAppState();
 }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return MyHomePageState();
-  }
-}
-
-class MyHomePageState extends State<MyHomePage> {
+class _MyAppState extends State<MyApp> {
   TextEditingController controller = TextEditingController();
   String thisText = "";
   int pinLength = 4;
-
+  bool isMaterial = false;
   bool hasError = false;
   String errorMessage;
 
   @override
   Widget build(BuildContext context) {
+    return isMaterial?
+    new MaterialApp(
+      title: "Flutter Demo",
+      home: materialPin(),
+    ):
+    new CupertinoApp(
+      title: 'Flutter Demo',
+      home: cupertinoPin(),
+    );
+  }
+
+  changePlatform(){
+    setState(() {
+      isMaterial = !isMaterial;
+    });
+  }
+
+  Scaffold materialPin(){
     return Scaffold(
       appBar: AppBar(
-        title: Text("Pin Code Text Field Example"),
+        title: Text("Material Pin Code Text Field Example"),
       ),
       body: Container(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(bottom: 60.0),
@@ -77,13 +75,13 @@ class MyHomePageState extends State<MyHomePage> {
                   print("DONE $text");
                 },
                 pinCodeTextFieldLayoutType:
-                    PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH,
+                PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH,
                 wrapAlignment: WrapAlignment.start,
                 pinBoxDecoration:
-                    ProvidedPinBoxDecoration.underlinedPinBoxDecoration,
+                ProvidedPinBoxDecoration.underlinedPinBoxDecoration,
                 pinTextStyle: TextStyle(fontSize: 30.0),
                 pinTextAnimatedSwitcherTransition:
-                    ProvidedPinBoxTextAnimation.scalingTransition,
+                ProvidedPinBoxTextAnimation.scalingTransition,
                 pinTextAnimatedSwitcherDuration: Duration(milliseconds: 300),
               ),
               Visibility(
@@ -95,8 +93,8 @@ class MyHomePageState extends State<MyHomePage> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 32.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                child: Wrap(
+                  alignment: WrapAlignment.spaceEvenly,
                   children: <Widget>[
                     MaterialButton(
                       color: Colors.blue,
@@ -138,10 +136,130 @@ class MyHomePageState extends State<MyHomePage> {
                         });
                       },
                     ),
+                    MaterialButton(
+                      color: Colors.amber,
+                      textColor: Colors.white,
+                      child: Text("CHANGE TO CUPERTINO"),
+                      onPressed: changePlatform,
+                    ),
                   ],
                 ),
               )
             ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  CupertinoPageScaffold cupertinoPin(){
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text("Cupertino Pin Code Text Field Example"),
+      ),
+      child: SafeArea(
+        child: Container(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 60.0),
+                  child: Text(thisText),
+                ),
+                PinCodeTextField(
+                  autofocus: false,
+                  controller: controller,
+                  hideCharacter: true,
+                  highlight: true,
+                  highlightColor: CupertinoColors.activeBlue,
+                  defaultBorderColor: CupertinoColors.black,
+                  hasTextBorderColor: CupertinoColors.activeGreen,
+                  maxLength: pinLength,
+                  hasError: hasError,
+                  maskCharacter: "🐶",
+                  onTextChanged: (text) {
+                    setState(() {
+                      hasError = false;
+                      thisText = text;
+                    });
+                  },
+                  isCupertino: true,
+                  onDone: (text) {
+                    print("DONE $text");
+                  },
+                  pinCodeTextFieldLayoutType:
+                  PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH,
+                  wrapAlignment: WrapAlignment.start,
+                  pinBoxDecoration:
+                  ProvidedPinBoxDecoration.defaultPinBoxDecoration,
+                  pinTextStyle: TextStyle(fontSize: 30.0),
+                  pinTextAnimatedSwitcherTransition:
+                  ProvidedPinBoxTextAnimation.scalingTransition,
+                  pinTextAnimatedSwitcherDuration: Duration(milliseconds: 300),
+                ),
+                Visibility(
+                  child: Text(
+                    "Wrong PIN!",
+                    style: TextStyle(color: CupertinoColors.destructiveRed),
+                  ),
+                  visible: hasError,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 32.0),
+                  child: Wrap(
+                    alignment: WrapAlignment.spaceEvenly,
+                    children: <Widget>[
+                      CupertinoButton(
+//                      color: Colors.blue,
+//                      textColor: Colors.white,
+                        child: Text("+"),
+                        onPressed: () {
+                          setState(() {
+                            this.pinLength++;
+                          });
+                        },
+                      ),
+                      CupertinoButton(
+//                      color: Colors.blue,
+//                      textColor: Colors.white,
+                        child: Text("-"),
+                        onPressed: () {
+                          setState(() {
+                            this.pinLength--;
+                          });
+                        },
+                      ),
+                      CupertinoButton(
+//                      color: Colors.blue,
+//                      textColor: Colors.white,
+                        child: Text("SUBMIT"),
+                        onPressed: () {
+                          setState(() {
+                            this.thisText = controller.text;
+                          });
+                        },
+                      ),
+                      CupertinoButton(
+//                      color: Colors.red,
+//                      textColor: Colors.white,
+                        child: Text("SUBMIT Error"),
+                        onPressed: () {
+                          setState(() {
+                            this.hasError = true;
+                          });
+                        },
+                      ),
+                      CupertinoButton(
+                        child: Text("CHANGE TO MATERIAL"),
+                        onPressed: changePlatform,
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

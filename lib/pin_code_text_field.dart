@@ -135,6 +135,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
 
   @override
   void didUpdateWidget(PinCodeTextField oldWidget) {
+    super.didUpdateWidget(oldWidget);
     if (oldWidget.maxLength < widget.maxLength) {
       setState(() {
         currentIndex = text.length;

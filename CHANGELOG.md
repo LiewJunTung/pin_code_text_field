@@ -1,5 +1,6 @@
 ## [1.3.0] - 26 March 2019
 * Added supports run in `CupertinoApp`. For usage set property `isCupertino: true`
+* Fixed a bug where focusNode is not disposed whenever parent widget is disposed
 
 ## [1.2.1] - 6 March 2019
 * Added `PinCodeTextFieldLayoutType` to adjust type of layouts such as 
