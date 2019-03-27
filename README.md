@@ -1,7 +1,7 @@
 [![Pub](https://img.shields.io/pub/v/pin_code_text_field.svg)](https://pub.dartlang.org/packages/pin_code_text_field)
-<a href="https://stackoverflow.com/questions/tagged/flutter?sort=votes">
-   <img alt="Awesome Flutter" src="https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square" />
-</a>
+[![Awesome Flutter](https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square)](https://github.com/Solido/awesome-flutter)
+
+
 # pin_code_text_field
 
 It's a Flutter widget for entering pin code. Suitable for use cases such as login and OTP.
