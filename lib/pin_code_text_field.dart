@@ -2,6 +2,7 @@ library pin_code_text_field;
 
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart' show CupertinoTextField;
 import 'package:flutter/material.dart';
 import 'package:flutter/animation.dart';
 
@@ -68,6 +69,7 @@ class ProvidedPinBoxTextAnimation {
 }
 
 class PinCodeTextField extends StatefulWidget {
+  final bool isCupertino;
   final int maxLength;
   final TextEditingController controller;
   final bool hideCharacter;
@@ -92,6 +94,7 @@ class PinCodeTextField extends StatefulWidget {
 
   const PinCodeTextField({
     Key key,
+    this.isCupertino: false,
     this.maxLength: 4,
     this.controller,
     this.hideCharacter: false,
@@ -193,7 +196,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
       });
     });
   }
-  
+
   @override
   void dispose() {
     focusNode?.dispose();
@@ -207,7 +210,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           _touchPinBoxRow(),
-          _fakeTextInput(),
+          !widget.isCupertino ? _fakeTextInput() : _fakeTextInputCupertino(),
         ],
       ),
     );
@@ -245,6 +248,29 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
         decoration: InputDecoration(
           fillColor: Colors.transparent,
           border: InputBorder.none,
+        ),
+        cursorColor: Colors.transparent,
+        maxLength: widget.maxLength,
+        onChanged: _onTextChanged,
+      ),
+    );
+  }
+
+  Widget _fakeTextInputCupertino() {
+    return Container(
+      width: 0.1,
+      height: 0.1,
+      child: CupertinoTextField(
+        autofocus: widget.autofocus,
+        focusNode: focusNode,
+        controller: widget.controller,
+        keyboardType: TextInputType.number,
+        style: TextStyle(
+          color: Colors.transparent,
+        ),
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          border: null,
         ),
         cursorColor: Colors.transparent,
         maxLength: widget.maxLength,

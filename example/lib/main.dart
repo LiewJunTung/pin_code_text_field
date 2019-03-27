@@ -9,7 +9,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Flutter Demo',
-
       theme: new ThemeData(
         // This is the theme of your application.
         //
@@ -41,7 +40,6 @@ class MyHomePageState extends State<MyHomePage> {
   bool hasError = false;
   String errorMessage;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,10 +54,7 @@ class MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(bottom: 60.0),
-                child: Text(thisText, style: Theme
-                    .of(context)
-                    .textTheme
-                    .title),
+                child: Text(thisText, style: Theme.of(context).textTheme.title),
               ),
               PinCodeTextField(
                 autofocus: false,
@@ -81,14 +76,14 @@ class MyHomePageState extends State<MyHomePage> {
                 onDone: (text) {
                   print("DONE $text");
                 },
-                pinCodeTextFieldLayoutType: PinCodeTextFieldLayoutType
-                    .AUTO_ADJUST_WIDTH,
+                pinCodeTextFieldLayoutType:
+                    PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH,
                 wrapAlignment: WrapAlignment.start,
-                pinBoxDecoration: ProvidedPinBoxDecoration
-                    .underlinedPinBoxDecoration,
+                pinBoxDecoration:
+                    ProvidedPinBoxDecoration.underlinedPinBoxDecoration,
                 pinTextStyle: TextStyle(fontSize: 30.0),
-                pinTextAnimatedSwitcherTransition: ProvidedPinBoxTextAnimation
-                    .scalingTransition,
+                pinTextAnimatedSwitcherTransition:
+                    ProvidedPinBoxTextAnimation.scalingTransition,
                 pinTextAnimatedSwitcherDuration: Duration(milliseconds: 300),
               ),
               Visibility(

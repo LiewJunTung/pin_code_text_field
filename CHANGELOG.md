@@ -1,12 +1,15 @@
-## [1.2.1] - 6 March 2018
+## [1.3.0] - 26 March 2019
+* Added supports run in `CupertinoApp`. For usage set property `isCupertino: true`
+
+## [1.2.1] - 6 March 2019
 * Added `PinCodeTextFieldLayoutType` to adjust type of layouts such as 
 auto adjust width or wrap 
 
-## [1.2.0] - 5 March 2018
+## [1.2.0] - 5 March 2019
 * Use `Wrap` instead of `Row` to display the Pin boxes
 
 
-## [1.1.3] - 29 January 2018
+## [1.1.3] - 29 January 2019
 * Added `autofocus` property
 
 ## [1.1.2] - 17 December 2018
