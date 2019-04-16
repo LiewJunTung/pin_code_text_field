@@ -158,7 +158,6 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
   }
 
   _calculateStrList() async {
-//    strList.length = widget.maxLength;
     if (strList.length > widget.maxLength) {
       strList.length = widget.maxLength;
     }
@@ -190,7 +189,14 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
   @override
   void initState() {
     super.initState();
+    _initTextController();
     _calculateStrList();
+    widget.controller.addListener(() {
+      setState(() {
+        _initTextController();
+      });
+      widget.onTextChanged(widget.controller.text);
+    });
     focusNode.addListener(() {
       setState(() {
         hasFocus = focusNode.hasFocus;
@@ -198,9 +204,18 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
     });
   }
 
+  void _initTextController() {
+    strList.clear();
+    text = widget.controller.text;
+    for (var i = 0; i < text.length; i++) {
+      strList.add(widget.hideCharacter ? widget.maskCharacter : text[i]);
+    }
+  }
+
   @override
   void dispose() {
     focusNode?.dispose();
+    widget.controller.dispose();
     super.dispose();
   }
 

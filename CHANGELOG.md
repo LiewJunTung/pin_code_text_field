@@ -1,3 +1,7 @@
+## [1.3.1] - 16 April 2019
+* `TextEditingController` to set initial text to the `PinCodeTextField`
+* `PinCodeTextField` will reflect changes made in `TextEditingController`
+
 ## [1.3.0] - 26 March 2019
 * Added supports run in `CupertinoApp`. For usage set property `isCupertino: true`
 * Fixed a bug where focusNode is not disposed whenever parent widget is disposed

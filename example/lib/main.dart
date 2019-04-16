@@ -13,10 +13,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  TextEditingController controller = TextEditingController();
+  TextEditingController controller = TextEditingController(text: "124");
   String thisText = "";
   int pinLength = 4;
-  bool isMaterial = false;
+  bool isMaterial = true;
   bool hasError = false;
   String errorMessage;
 
@@ -141,6 +141,22 @@ class _MyAppState extends State<MyApp> {
                       textColor: Colors.white,
                       child: Text("CHANGE TO CUPERTINO"),
                       onPressed: changePlatform,
+                    ),
+                    MaterialButton(
+                      color: Colors.pink,
+                      textColor: Colors.white,
+                      child: Text("CLEAR PIN"),
+                      onPressed: (){
+                        controller.clear();
+                      },
+                    ),
+                    MaterialButton(
+                      color: Colors.lime,
+                      textColor: Colors.black,
+                      child: Text("SET TO 456"),
+                      onPressed: (){
+                        controller.text = "456";
+                      },
                     ),
                   ],
                 ),
