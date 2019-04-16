@@ -6,16 +6,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="454e3a70-107c-46fa-b354-df0efe7224c0" name="Default" comment="[1.3.0]&#10;* Added Example of using CupertinoApp&#10;* Added supports run in `CupertinoApp`. For usage set property `isCupertino: true`&#10;* Fixed a bug where focusNode is not disposed whenever parent widget is disposed">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pin_code_text_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pin_code_text_field.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pin_code_text_field.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pin_code_text_field.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    <list default="true" id="454e3a70-107c-46fa-b354-df0efe7224c0" name="Default" comment="[1.3.1] - 16 April 2019&#10;* `TextEditingController` to set initial text to the `PinCodeTextField`&#10;* `PinCodeTextField` will reflect changes made in `TextEditingController`">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -67,7 +59,7 @@
         <counts>
           <entry key="dart" value="1743" />
           <entry key="gradle" value="12" />
-          <entry key="md" value="509" />
+          <entry key="md" value="510" />
           <entry key="properties" value="7" />
           <entry key="txt" value="75" />
           <entry key="yaml" value="4" />
@@ -77,7 +69,7 @@
         <counts>
           <entry key="Dart" value="1743" />
           <entry key="Groovy" value="12" />
-          <entry key="Markdown" value="509" />
+          <entry key="Markdown" value="510" />
           <entry key="PLAIN_TEXT" value="75" />
           <entry key="Properties" value="7" />
           <entry key="YAML" value="4" />
@@ -160,12 +152,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="144">
-                <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+              <first_editor relative-caret-position="103">
+                <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -177,8 +169,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/pin_code_text_field.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="198" column="7" selection-start-line="198" selection-start-column="7" selection-end-line="198" selection-end-column="7" />
+            <state relative-caret-position="210">
+              <caret line="239" column="55" selection-start-line="239" selection-start-column="46" selection-end-line="239" selection-end-column="55" />
               <folding>
                 <element signature="e#30#50#0" expanded="true" />
               </folding>
@@ -190,8 +182,8 @@
         <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="15">
-                <caret line="1" column="71" selection-start-line="1" selection-start-column="71" selection-end-line="1" selection-end-column="71" />
+              <first_editor>
+                <caret selection-end-line="3" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -200,7 +192,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pin_code_text_field.iml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
@@ -222,7 +214,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>build</find>
       <find>context</find>
       <find>maxLength</find>
       <find>_calculateStrList</find>
@@ -252,6 +243,7 @@
       <find>widget.controller.text.split('')</find>
       <find>strList</find>
       <find>controller</find>
+      <find>Gesture</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -275,12 +267,12 @@
         <option value="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.properties" />
         <option value="$PROJECT_DIR$/example/android/app/build.gradle" />
         <option value="$PROJECT_DIR$/lib/cupertino_pin_code_text_field.dart" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/pubspec.lock" />
         <option value="$PROJECT_DIR$/example/lib/main.dart" />
         <option value="$PROJECT_DIR$/lib/pin_code_text_field.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/CHANGELOG.md" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -1299,7 +1291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551801272511</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="[1.3.1] - 16 April 2019&#10;* `TextEditingController` to set initial text to the `PinCodeTextField`&#10;* `PinCodeTextField` will reflect changes made in `TextEditingController`">
+      <created>1555429765014</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1555429765014</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1311,7 +1310,7 @@
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27539343" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27539343" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -1327,7 +1326,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Dart Analysis" order="7" sideWeight="0.4992057" weight="0.32866243" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49642575" visible="true" weight="0.32356688" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49642575" visible="true" weight="0.32356688" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007943" side_tool="true" weight="0.3287144" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4988086" weight="0.32630613" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49841145" weight="0.32738853" />
@@ -1425,7 +1424,8 @@
     <MESSAGE value="updated another gif" />
     <MESSAGE value="1.1.2&#10;* Refactored provided `PinBoxDecoration` to `ProvidedPinBoxDecoration`&#10;* Refactored provided `PinBoxTextAnimation` to `ProvidedPinBoxTextAnimation`" />
     <MESSAGE value="1.2.0&#10;* Use `Wrap` instead of `Row` to display the Pin boxes&#10;* Updated minSdkVersion in build.gradle to sdk 28" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.2.0&#10;* Use `Wrap` instead of `Row` to display the Pin boxes&#10;* Updated minSdkVersion in build.gradle to sdk 28" />
+    <MESSAGE value="[1.3.1] - 16 April 2019&#10;* `TextEditingController` to set initial text to the `PinCodeTextField`&#10;* `PinCodeTextField` will reflect changes made in `TextEditingController`" />
+    <option name="LAST_COMMIT_MESSAGE" value="[1.3.1] - 16 April 2019&#10;* `TextEditingController` to set initial text to the `PinCodeTextField`&#10;* `PinCodeTextField` will reflect changes made in `TextEditingController`" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/JT_APPs/flutter/packages/flutter_test/lib/src/finders.dart" />
@@ -1561,21 +1561,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pin_code_text_field.dart">
+    <entry file="file://$PROJECT_DIR$/pin_code_text_field.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="198" column="7" selection-start-line="198" selection-start-column="7" selection-end-line="198" selection-end-column="7" />
-          <folding>
-            <element signature="e#30#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="390">
+          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="15">
-            <caret line="1" column="71" selection-start-line="1" selection-start-column="71" selection-end-line="1" selection-end-column="71" />
+          <first_editor>
+            <caret selection-end-line="3" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
@@ -1583,15 +1580,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="144">
-            <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
+    <entry file="file://$PROJECT_DIR$/lib/pin_code_text_field.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="239" column="55" selection-start-line="239" selection-start-column="46" selection-end-line="239" selection-end-column="55" />
+          <folding>
+            <element signature="e#30#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1602,10 +1597,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pin_code_text_field.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="103">
+            <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
         </state>
       </provider>
     </entry>
