@@ -6,8 +6,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="454e3a70-107c-46fa-b354-df0efe7224c0" name="Default" comment="[1.3.1] - 16 April 2019&#10;* `TextEditingController` to set initial text to the `PinCodeTextField`&#10;* `PinCodeTextField` will reflect changes made in `TextEditingController`">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="454e3a70-107c-46fa-b354-df0efe7224c0" name="Default" comment="Updated README">
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pin_code_text_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pin_code_text_field.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -33,7 +34,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="LICENSE" value="1" />
-          <entry key="dart" value="15" />
+          <entry key="dart" value="18" />
           <entry key="gif" value="1" />
           <entry key="gradle" value="3" />
           <entry key="iml" value="2" />
@@ -45,7 +46,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Dart" value="15" />
+          <entry key="Dart" value="18" />
           <entry key="Groovy" value="3" />
           <entry key="IDEA_MODULE" value="2" />
           <entry key="Image" value="1" />
@@ -57,20 +58,20 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dart" value="1743" />
+          <entry key="dart" value="2034" />
           <entry key="gradle" value="12" />
           <entry key="md" value="510" />
           <entry key="properties" value="7" />
-          <entry key="txt" value="75" />
+          <entry key="txt" value="89" />
           <entry key="yaml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dart" value="1743" />
+          <entry key="Dart" value="2034" />
           <entry key="Groovy" value="12" />
           <entry key="Markdown" value="510" />
-          <entry key="PLAIN_TEXT" value="75" />
+          <entry key="PLAIN_TEXT" value="89" />
           <entry key="Properties" value="7" />
           <entry key="YAML" value="4" />
         </counts>
@@ -125,8 +126,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="15" column="58" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="58" />
+            <state relative-caret-position="71">
+              <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -152,7 +153,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="FIRST">
@@ -166,14 +167,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/pin_code_text_field.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="239" column="55" selection-start-line="239" selection-start-column="46" selection-end-line="239" selection-end-column="55" />
+            <state relative-caret-position="174">
+              <caret line="208" column="14" selection-start-line="208" selection-start-column="14" selection-end-line="208" selection-end-column="14" />
               <folding>
                 <element signature="e#30#50#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Documents/flutter/bin/cache/pkg/sky_engine/lib/core/double.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="386">
+              <caret line="216" column="33" selection-start-line="216" selection-start-column="25" selection-end-line="216" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Documents/flutter/bin/cache/pkg/sky_engine/lib/core/regexp.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="372">
+              <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Documents/flutter/bin/cache/pkg/sky_engine/lib/core/string.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="443" column="45" selection-start-line="443" selection-start-column="25" selection-end-line="443" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -197,15 +225,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
               <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Documents/flutter/packages/flutter/lib/src/foundation/change_notifier.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="176" column="7" selection-start-line="176" selection-start-column="7" selection-end-line="176" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -268,11 +287,11 @@
         <option value="$PROJECT_DIR$/example/android/app/build.gradle" />
         <option value="$PROJECT_DIR$/lib/cupertino_pin_code_text_field.dart" />
         <option value="$PROJECT_DIR$/pubspec.lock" />
-        <option value="$PROJECT_DIR$/example/lib/main.dart" />
-        <option value="$PROJECT_DIR$/lib/pin_code_text_field.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/CHANGELOG.md" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/example/lib/main.dart" />
+        <option value="$PROJECT_DIR$/lib/pin_code_text_field.dart" />
       </list>
     </option>
   </component>
@@ -1298,7 +1317,21 @@
       <option name="project" value="LOCAL" />
       <updated>1555429765014</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Updated README">
+      <created>1555431003009</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1555431003009</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Updated README">
+      <created>1555431027633</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1555431027633</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1425,11 +1458,10 @@
     <MESSAGE value="1.1.2&#10;* Refactored provided `PinBoxDecoration` to `ProvidedPinBoxDecoration`&#10;* Refactored provided `PinBoxTextAnimation` to `ProvidedPinBoxTextAnimation`" />
     <MESSAGE value="1.2.0&#10;* Use `Wrap` instead of `Row` to display the Pin boxes&#10;* Updated minSdkVersion in build.gradle to sdk 28" />
     <MESSAGE value="[1.3.1] - 16 April 2019&#10;* `TextEditingController` to set initial text to the `PinCodeTextField`&#10;* `PinCodeTextField` will reflect changes made in `TextEditingController`" />
-    <option name="LAST_COMMIT_MESSAGE" value="[1.3.1] - 16 April 2019&#10;* `TextEditingController` to set initial text to the `PinCodeTextField`&#10;* `PinCodeTextField` will reflect changes made in `TextEditingController`" />
+    <MESSAGE value="Updated README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated README" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/JT_APPs/flutter/packages/flutter_test/lib/src/finders.dart" />
-    <entry file="file://$USER_HOME$/JT_APPs/flutter/packages/flutter/lib/src/material/app.dart" />
     <entry file="file://$USER_HOME$/JT_APPs/flutter/packages/flutter/lib/src/services/text_input.dart" />
     <entry file="file://$PROJECT_DIR$/example/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
@@ -1551,16 +1583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="15" column="58" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pin_code_text_field.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -1580,16 +1602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pin_code_text_field.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="239" column="55" selection-start-line="239" selection-start-column="46" selection-end-line="239" selection-end-column="55" />
-          <folding>
-            <element signature="e#30#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1606,6 +1618,47 @@
           <second_editor>
             <markdownNavigatorState />
           </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/flutter/bin/cache/pkg/sky_engine/lib/core/string.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="443" column="45" selection-start-line="443" selection-start-column="25" selection-end-line="443" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/flutter/bin/cache/pkg/sky_engine/lib/core/regexp.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/flutter/bin/cache/pkg/sky_engine/lib/core/double.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="216" column="33" selection-start-line="216" selection-start-column="25" selection-end-line="216" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pin_code_text_field.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="208" column="14" selection-start-line="208" selection-start-column="14" selection-end-line="208" selection-end-column="14" />
+          <folding>
+            <element signature="e#30#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

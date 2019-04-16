@@ -1,4 +1,4 @@
-## [1.3.1] - 16 April 2019
+## [1.3.2] - 16 April 2019
 * `TextEditingController` to set initial text to the `PinCodeTextField`
 * `PinCodeTextField` will reflect changes made in `TextEditingController`
 

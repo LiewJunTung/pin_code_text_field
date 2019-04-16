@@ -204,8 +204,23 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
     });
   }
 
+  bool _isNumeric(String s) {
+    if(s == null) {
+      return false;
+    }
+    var n = int.tryParse(s);
+    return n != null && n > -1;
+  }
+
   void _initTextController() {
     strList.clear();
+    if (widget.controller.text.length > widget.maxLength) {
+      throw Exception("TextEditingController length exceeded maxLength!");
+    }
+
+    if(!_isNumeric(widget.controller.text)) {
+      throw Exception("TextEditingController can only contains numeric");
+    }
     text = widget.controller.text;
     for (var i = 0; i < text.length; i++) {
       strList.add(widget.hideCharacter ? widget.maskCharacter : text[i]);
