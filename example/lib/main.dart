@@ -4,8 +4,6 @@ import 'package:pin_code_text_field/pin_code_text_field.dart';
 
 void main() => runApp(new MyApp());
 
-
-
 class MyApp extends StatefulWidget {
   // This widget is the root of your application.
   @override
@@ -13,7 +11,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  TextEditingController controller = TextEditingController(text: "129");
+  TextEditingController controller = TextEditingController(text: "");
   String thisText = "";
   int pinLength = 4;
   bool isMaterial = true;
@@ -22,24 +20,24 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return isMaterial?
-    new MaterialApp(
-      title: "Flutter Demo",
-      home: materialPin(),
-    ):
-    new CupertinoApp(
-      title: 'Flutter Demo',
-      home: cupertinoPin(),
-    );
+    return isMaterial
+        ? new MaterialApp(
+            title: "Flutter Demo",
+            home: materialPin(),
+          )
+        : new CupertinoApp(
+            title: 'Flutter Demo',
+            home: cupertinoPin(),
+          );
   }
 
-  changePlatform(){
+  changePlatform() {
     setState(() {
       isMaterial = !isMaterial;
     });
   }
 
-  Scaffold materialPin(){
+  Scaffold materialPin() {
     return Scaffold(
       appBar: AppBar(
         title: Text("Material Pin Code Text Field Example"),
@@ -54,35 +52,37 @@ class _MyAppState extends State<MyApp> {
                 padding: const EdgeInsets.only(bottom: 60.0),
                 child: Text(thisText, style: Theme.of(context).textTheme.title),
               ),
-              PinCodeTextField(
-                autofocus: false,
-                controller: controller,
-                hideCharacter: true,
-                highlight: true,
-                highlightColor: Colors.blue,
-                defaultBorderColor: Colors.black,
-                hasTextBorderColor: Colors.green,
-                maxLength: pinLength,
-                hasError: hasError,
-                maskCharacter: "😎",
-                onTextChanged: (text) {
-                  setState(() {
-                    hasError = false;
-                    thisText = text;
-                  });
-                },
-                onDone: (text) {
-                  print("DONE $text");
-                },
-                pinCodeTextFieldLayoutType:
-                PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH,
-                wrapAlignment: WrapAlignment.start,
-                pinBoxDecoration:
-                ProvidedPinBoxDecoration.underlinedPinBoxDecoration,
-                pinTextStyle: TextStyle(fontSize: 30.0),
-                pinTextAnimatedSwitcherTransition:
-                ProvidedPinBoxTextAnimation.scalingTransition,
-                pinTextAnimatedSwitcherDuration: Duration(milliseconds: 300),
+              Container(
+                child: PinCodeTextField(
+                  autofocus: false,
+                  controller: controller,
+                  hideCharacter: true,
+                  highlight: true,
+                  highlightColor: Colors.blue,
+                  defaultBorderColor: Colors.black,
+                  hasTextBorderColor: Colors.green,
+                  maxLength: pinLength,
+                  hasError: hasError,
+                  maskCharacter: "😎",
+                  onTextChanged: (text) {
+                    setState(() {
+                      hasError = false;
+                      thisText = text;
+                    });
+                  },
+                  onDone: (text) {
+                    print("DONE $text");
+                  },
+                  pinCodeTextFieldLayoutType:
+                      PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH,
+                  wrapAlignment: WrapAlignment.start,
+                  pinBoxDecoration:
+                      ProvidedPinBoxDecoration.underlinedPinBoxDecoration,
+                  pinTextStyle: TextStyle(fontSize: 30.0),
+                  pinTextAnimatedSwitcherTransition:
+                      ProvidedPinBoxTextAnimation.scalingTransition,
+                  pinTextAnimatedSwitcherDuration: Duration(milliseconds: 300),
+                ),
               ),
               Visibility(
                 child: Text(
@@ -146,7 +146,7 @@ class _MyAppState extends State<MyApp> {
                       color: Colors.pink,
                       textColor: Colors.white,
                       child: Text("CLEAR PIN"),
-                      onPressed: (){
+                      onPressed: () {
                         controller.clear();
                       },
                     ),
@@ -154,7 +154,7 @@ class _MyAppState extends State<MyApp> {
                       color: Colors.lime,
                       textColor: Colors.black,
                       child: Text("SET TO 456"),
-                      onPressed: (){
+                      onPressed: () {
                         controller.text = "456";
                       },
                     ),
@@ -168,7 +168,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  CupertinoPageScaffold cupertinoPin(){
+  CupertinoPageScaffold cupertinoPin() {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text("Cupertino Pin Code Text Field Example"),
@@ -206,13 +206,13 @@ class _MyAppState extends State<MyApp> {
                     print("DONE $text");
                   },
                   pinCodeTextFieldLayoutType:
-                  PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH,
+                      PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH,
                   wrapAlignment: WrapAlignment.start,
                   pinBoxDecoration:
-                  ProvidedPinBoxDecoration.defaultPinBoxDecoration,
+                      ProvidedPinBoxDecoration.defaultPinBoxDecoration,
                   pinTextStyle: TextStyle(fontSize: 30.0),
                   pinTextAnimatedSwitcherTransition:
-                  ProvidedPinBoxTextAnimation.scalingTransition,
+                      ProvidedPinBoxTextAnimation.scalingTransition,
                   pinTextAnimatedSwitcherDuration: Duration(milliseconds: 300),
                 ),
                 Visibility(

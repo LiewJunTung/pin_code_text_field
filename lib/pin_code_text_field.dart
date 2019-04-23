@@ -205,7 +205,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
   }
 
   bool _isNumeric(String s) {
-    if(s == null) {
+    if (s == null) {
       return false;
     }
     var n = int.tryParse(s);
@@ -214,13 +214,16 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
 
   void _initTextController() {
     strList.clear();
-    if (widget.controller.text.length > widget.maxLength) {
-      throw Exception("TextEditingController length exceeded maxLength!");
+    if (widget.controller.text.isNotEmpty) {
+      if (widget.controller.text.length > widget.maxLength) {
+        throw Exception("TextEditingController length exceeded maxLength!");
+      }
+
+      if (!_isNumeric(widget.controller.text)) {
+        throw Exception("TextEditingController can only contains numeric");
+      }
     }
 
-    if(!_isNumeric(widget.controller.text)) {
-      throw Exception("TextEditingController can only contains numeric");
-    }
     text = widget.controller.text;
     for (var i = 0; i < text.length; i++) {
       strList.add(widget.hideCharacter ? widget.maskCharacter : text[i]);
@@ -267,16 +270,24 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
   Widget _fakeTextInput() {
     return Container(
       width: 0.1,
-      height: 0.1,
+      height: 8.0, // RenderBoxDecorator subtextGap constant is 8.0
       child: TextField(
         autofocus: widget.autofocus,
         focusNode: focusNode,
         controller: widget.controller,
         keyboardType: TextInputType.number,
         style: TextStyle(
-          color: Colors.transparent,
+          height: 0.1, color: Colors.transparent,
+//          color: Colors.transparent,
         ),
         decoration: InputDecoration(
+          counterText: null,
+          counterStyle: null,
+          helperStyle: TextStyle(
+            height: 0.0,
+            color: Colors.transparent,
+          ),
+          labelStyle: TextStyle(height: 0.1),
           fillColor: Colors.transparent,
           border: InputBorder.none,
         ),
