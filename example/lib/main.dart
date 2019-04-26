@@ -67,11 +67,11 @@ class _MyAppState extends State<MyApp> {
                   onTextChanged: (text) {
                     setState(() {
                       hasError = false;
-                      thisText = text;
                     });
                   },
                   onDone: (text) {
                     print("DONE $text");
+                    print("DONE CONTROLLER ${controller.text}");
                   },
                   pinCodeTextFieldLayoutType:
                       PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH,
@@ -80,7 +80,7 @@ class _MyAppState extends State<MyApp> {
                       ProvidedPinBoxDecoration.underlinedPinBoxDecoration,
                   pinTextStyle: TextStyle(fontSize: 30.0),
                   pinTextAnimatedSwitcherTransition:
-                      ProvidedPinBoxTextAnimation.scalingTransition,
+                      ProvidedPinBoxTextAnimation.awesomeTransition,
                   pinTextAnimatedSwitcherDuration: Duration(milliseconds: 300),
                 ),
               ),

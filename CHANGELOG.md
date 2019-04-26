@@ -1,5 +1,9 @@
+## [1.3.4] - 24 April 2019
+* Fixed pin not showing up when `pinTextAnimatedSwitcherTransition` is set.
+* Fixed error when `TextEditingController` is not set
+
 ## [1.3.3] - 24 April 2019
-* Fixed `TextEdittingController can only contain numeric` Error
+* Fixed `TextEditingController can only contain numeric` Error
 * Fixed `BoxConstraints has a negative minimum height` Error
 
 ## [1.3.2] - 16 April 2019

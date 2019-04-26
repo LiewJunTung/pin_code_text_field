@@ -140,8 +140,8 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
       setState(() {
         currentIndex = text.length;
       });
-      widget.controller.text = text;
-      widget.controller.selection =
+      widget.controller?.text = text;
+      widget.controller?.selection =
           TextSelection.collapsed(offset: text.length);
     } else if (oldWidget.maxLength > widget.maxLength &&
         widget.maxLength > 0 &&
@@ -151,8 +151,8 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
         text = text.substring(0, widget.maxLength);
         currentIndex = text.length;
       });
-      widget.controller.text = text;
-      widget.controller.selection =
+      widget.controller?.text = text;
+      widget.controller?.selection =
           TextSelection.collapsed(offset: text.length);
     }
   }
@@ -191,7 +191,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
     super.initState();
     _initTextController();
     _calculateStrList();
-    widget.controller.addListener(() {
+    widget.controller?.addListener(() {
       setState(() {
         _initTextController();
       });
@@ -213,6 +213,9 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
   }
 
   void _initTextController() {
+    if (widget.controller == null) {
+      return;
+    }
     strList.clear();
     if (widget.controller.text.isNotEmpty) {
       if (widget.controller.text.length > widget.maxLength) {
@@ -233,7 +236,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
   @override
   void dispose() {
     focusNode?.dispose();
-    widget.controller.dispose();
+    widget.controller?.dispose();
     super.dispose();
   }
 
