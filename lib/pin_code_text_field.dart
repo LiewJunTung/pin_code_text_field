@@ -284,6 +284,12 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
 //          color: Colors.transparent,
         ),
         decoration: InputDecoration(
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.transparent,
+              width: 0.0,
+            ),
+          ),
           counterText: null,
           counterStyle: null,
           helperStyle: TextStyle(

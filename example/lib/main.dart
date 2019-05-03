@@ -24,6 +24,14 @@ class _MyAppState extends State<MyApp> {
         ? new MaterialApp(
             title: "Flutter Demo",
             home: materialPin(),
+            theme: ThemeData(
+                inputDecorationTheme: InputDecorationTheme(
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Color(0xFF9FA0A5),
+                ),
+              ),
+            )),
           )
         : new CupertinoApp(
             title: 'Flutter Demo',
@@ -53,6 +61,7 @@ class _MyAppState extends State<MyApp> {
                 child: Text(thisText, style: Theme.of(context).textTheme.title),
               ),
               Container(
+                height: 100.0,
                 child: PinCodeTextField(
                   autofocus: false,
                   controller: controller,

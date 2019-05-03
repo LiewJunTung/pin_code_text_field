@@ -1,3 +1,6 @@
+## [1.3.5] - 3 May 2019
+* Fixed UI error whenever BorderSide color is set to ThemeData
+
 ## [1.3.4] - 24 April 2019
 * Fixed pin not showing up when `pinTextAnimatedSwitcherTransition` is set.
 * Fixed error when `TextEditingController` is not set
