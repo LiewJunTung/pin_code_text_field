@@ -25,13 +25,14 @@ class _MyAppState extends State<MyApp> {
             title: "Flutter Demo",
             home: materialPin(),
             theme: ThemeData(
-                inputDecorationTheme: InputDecorationTheme(
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Color(0xFF9FA0A5),
+              inputDecorationTheme: InputDecorationTheme(
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFF9FA0A5),
+                  ),
                 ),
               ),
-            )),
+            ),
           )
         : new CupertinoApp(
             title: 'Flutter Demo',

@@ -1,3 +1,7 @@
+## [1.3.6] - 7 May 2019
+* Fixed UI error whenever BorderSide color is set to ThemeData for focusedErrorBorder
+`errorBorder`, `disabledBorder`, `enabledBorder`
+
 ## [1.3.5] - 3 May 2019
 * Fixed UI error whenever BorderSide color is set to ThemeData
 

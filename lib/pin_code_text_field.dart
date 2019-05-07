@@ -271,6 +271,12 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
   }
 
   Widget _fakeTextInput() {
+    var transparentBorder = OutlineInputBorder(
+      borderSide: BorderSide(
+        color: Colors.transparent,
+        width: 0.0,
+      ),
+    );
     return Container(
       width: 0.1,
       height: 8.0, // RenderBoxDecorator subtextGap constant is 8.0
@@ -284,12 +290,11 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
 //          color: Colors.transparent,
         ),
         decoration: InputDecoration(
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.transparent,
-              width: 0.0,
-            ),
-          ),
+          focusedErrorBorder: transparentBorder,
+          errorBorder: transparentBorder,
+          disabledBorder: transparentBorder,
+          enabledBorder: transparentBorder,
+          focusedBorder: transparentBorder,
           counterText: null,
           counterStyle: null,
           helperStyle: TextStyle(
