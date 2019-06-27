@@ -91,6 +91,7 @@ class PinCodeTextField extends StatefulWidget {
   final Duration pinTextAnimatedSwitcherDuration;
   final WrapAlignment wrapAlignment;
   final PinCodeTextFieldLayoutType pinCodeTextFieldLayoutType;
+  final TextDirection textDirection;
 
   const PinCodeTextField({
     Key key,
@@ -116,6 +117,7 @@ class PinCodeTextField extends StatefulWidget {
     this.autofocus: false,
     this.wrapAlignment: WrapAlignment.start,
     this.pinCodeTextFieldLayoutType: PinCodeTextFieldLayoutType.NORMAL,
+    this.textDirection: TextDirection.ltr,
   }) : super(key: key);
 
   @override
@@ -366,6 +368,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
             direction: Axis.horizontal,
             alignment: widget.wrapAlignment,
             verticalDirection: VerticalDirection.down,
+            textDirection: widget.textDirection,
             children: pinCodes,
           )
         : Row(
@@ -373,6 +376,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             verticalDirection: VerticalDirection.down,
+            textDirection: widget.textDirection,
             children: pinCodes);
   }
 
