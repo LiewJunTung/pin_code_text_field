@@ -37,7 +37,8 @@ import 'package:pin_code_text_field/pin_code_text_field.dart';
 | highlightColor | Color | Colors.black | Set color of the focused pin box. |
 | pinBoxDecoration | BoxDecoration| ProvidedPinBoxDecoration._defaultPinBoxDecoration | Customization for the individual pin boxes. Check `ProvidedPinBoxDecoration` for possible options. |
 | pinTextStyle | TextStyle | | TextStyle for styling pin characters. |
-| maskCharacter | String | "\u25CF" | Special character to mask the pin code. Will only work if `hideCharacter` is set to `true`. |
+| maskCharacter | String | "🤣" | Special character to mask the pin code. Will only work if `hideCharacter` is set to `true`.  |
+| maskCharacters | List\<String> | "🔥" , "🚀", "🤔", "🤣" | Special characters to mask the pin code. Will only work if `hideCharacter` is set to `true` and `maskCharacter` is unset. |
 | pinBoxHeight | double | 70.0 | Height of pin boxes. |
 | pinBoxWidth | double | 70.0 | Width of pin boxes. |
 | onDone | void Function(String) | | Callback when the max length of pin code is reached. |
