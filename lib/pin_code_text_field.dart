@@ -78,6 +78,7 @@ class PinCodeTextField extends StatefulWidget {
   final Color defaultBorderColor;
   final PinBoxDecoration pinBoxDecoration;
   final String maskCharacter;
+  final List<String> maskCharacters;
   final TextStyle pinTextStyle;
   final double pinBoxHeight;
   final double pinBoxWidth;
@@ -102,7 +103,8 @@ class PinCodeTextField extends StatefulWidget {
     this.highlight: false,
     this.highlightColor: Colors.black,
     this.pinBoxDecoration,
-    this.maskCharacter: " ",
+    this.maskCharacter,
+    this.maskCharacters: const [" ", " ", " ", " "],
     this.pinBoxWidth: 70.0,
     this.pinBoxHeight: 70.0,
     this.pinTextStyle,
@@ -224,6 +226,15 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
         throw Exception("TextEditingController length exceeded maxLength!");
       }
 
+      if (widget.maskCharacters.length > widget.maxLength) {
+        throw Exception("Mask Characters length exceeded maxLength!");
+      }
+
+      if (widget.maskCharacters.length < widget.maxLength) {
+        throw Exception(
+            "Mask Characters length cannot be less than maxLength!");
+      }
+
       if (!_isNumeric(widget.controller.text)) {
         throw Exception("TextEditingController can only contains numeric");
       }
@@ -231,7 +242,11 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
 
     text = widget.controller.text;
     for (var i = 0; i < text.length; i++) {
-      strList.add(widget.hideCharacter ? widget.maskCharacter : text[i]);
+      strList.add(widget.hideCharacter
+          ? (widget.maskCharacter == null
+              ? widget.maskCharacters[i]
+              : widget.maskCharacter)
+          : text[i]);
     }
   }
 
