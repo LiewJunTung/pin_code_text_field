@@ -246,8 +246,11 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
 
   @override
   void dispose() {
-    focusNode?.dispose();
-    widget.controller?.dispose();
+    if (widget.focusNode == null) {
+      // Only dispose the focus node if it's internal.  Don't dispose the passed
+      // in focus node as it's owned by the parent not this child widget.
+      focusNode?.dispose();
+    }
     super.dispose();
   }
 
