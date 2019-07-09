@@ -87,6 +87,7 @@ class PinCodeTextField extends StatefulWidget {
   final Color hasTextBorderColor;
   final Function(String) onTextChanged;
   final bool autofocus;
+  final FocusNode focusNode;
   final AnimatedSwitcherTransitionBuilder pinTextAnimatedSwitcherTransition;
   final Duration pinTextAnimatedSwitcherDuration;
   final WrapAlignment wrapAlignment;
@@ -115,6 +116,7 @@ class PinCodeTextField extends StatefulWidget {
     this.errorBorderColor: Colors.red,
     this.onTextChanged,
     this.autofocus: false,
+    this.focusNode,
     this.wrapAlignment: WrapAlignment.start,
     this.pinCodeTextFieldLayoutType: PinCodeTextFieldLayoutType.NORMAL,
     this.textDirection: TextDirection.ltr,
@@ -127,7 +129,7 @@ class PinCodeTextField extends StatefulWidget {
 }
 
 class PinCodeTextFieldState extends State<PinCodeTextField> {
-  FocusNode focusNode = new FocusNode();
+  FocusNode focusNode;
   String text = "";
   int currentIndex = 0;
   List<String> strList = [];
@@ -138,6 +140,8 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
   @override
   void didUpdateWidget(PinCodeTextField oldWidget) {
     super.didUpdateWidget(oldWidget);
+    focusNode = widget.focusNode ?? focusNode;
+
     if (oldWidget.maxLength < widget.maxLength) {
       setState(() {
         currentIndex = text.length;
@@ -191,13 +195,18 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
   @override
   void initState() {
     super.initState();
+    focusNode = widget.focusNode ?? FocusNode();
+
     _initTextController();
     _calculateStrList();
     widget.controller?.addListener(() {
       setState(() {
         _initTextController();
       });
-      widget.onTextChanged(widget.controller.text);
+
+      if (widget.onTextChanged != null) {
+        widget.onTextChanged(widget.controller.text);
+      }
     });
     focusNode.addListener(() {
       setState(() {
