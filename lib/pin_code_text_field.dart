@@ -199,7 +199,12 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
 
     _initTextController();
     _calculateStrList();
-    widget.controller?.addListener(() {
+    widget.controller?.addListener(_controllerListener);
+    focusNode?.addListener(_focusListener);
+  }
+
+  void _controllerListener() {
+    if (mounted == true) {
       setState(() {
         _initTextController();
       });
@@ -207,12 +212,15 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
       if (widget.onTextChanged != null) {
         widget.onTextChanged(widget.controller.text);
       }
-    });
-    focusNode?.addListener(() {
+    }
+  }
+
+  void _focusListener() {
+    if (mounted == true) {
       setState(() {
         hasFocus = focusNode.hasFocus;
       });
-    });
+    }
   }
 
   bool _isNumeric(String s) {
@@ -250,7 +258,12 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
       // Only dispose the focus node if it's internal.  Don't dispose the passed
       // in focus node as it's owned by the parent not this child widget.
       focusNode?.dispose();
+    } else {
+      focusNode.removeListener(_focusListener);
     }
+
+    widget.controller?.removeListener(_controllerListener);
+
     super.dispose();
   }
 
