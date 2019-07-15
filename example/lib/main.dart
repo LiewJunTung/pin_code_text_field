@@ -2,10 +2,76 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 
-void main() => runApp(new MyApp());
+const String MATERIAL_SCREEN = "MATERIAL_SCREEN";
+
+void main() => runApp(new SampleApp());
+
+class SampleApp extends StatelessWidget {
+  bool isMaterial = true;
+
+  MaterialPageRoute _buildRoute(RouteSettings settings, Widget builder) {
+    return new MaterialPageRoute(
+      settings: settings,
+      builder: (ctx) => builder,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: MainApp(),
+      onGenerateRoute: (RouteSettings settings) {
+        switch (settings.name) {
+          case MATERIAL_SCREEN:
+            bool isMaterial = settings.arguments;
+            return _buildRoute(settings, MyApp(isMaterial: isMaterial,));
+        }
+      },
+    );
+  }
+}
+
+class MainApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              TextField(
+                autofocus: true,
+              ),
+              RaisedButton(
+                child: Text("Material"),
+                onPressed: () {
+                  Navigator.of(context).pushNamed(MATERIAL_SCREEN, arguments:  true);
+                },
+              ),
+              RaisedButton(
+                child: Text("Cupertino"),
+                onPressed: () {
+                  Navigator.of(context).pushNamed(MATERIAL_SCREEN, arguments: false);
+                },
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+}
 
 class MyApp extends StatefulWidget {
   // This widget is the root of your application.
+  final bool isMaterial;
+
+  const MyApp({Key key, this.isMaterial}) : super(key: key);
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -14,20 +80,18 @@ class _MyAppState extends State<MyApp> {
   TextEditingController controller = TextEditingController(text: "");
   String thisText = "";
   int pinLength = 4;
-  bool isMaterial = true;
   bool hasError = false;
   String errorMessage;
 
   @override
   void dispose() {
     controller.dispose();
-
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return isMaterial
+    return widget.isMaterial
         ? new MaterialApp(
             title: "Flutter Demo",
             home: materialPin(),
@@ -45,12 +109,6 @@ class _MyAppState extends State<MyApp> {
             title: 'Flutter Demo',
             home: cupertinoPin(),
           );
-  }
-
-  changePlatform() {
-    setState(() {
-      isMaterial = !isMaterial;
-    });
   }
 
   Scaffold materialPin() {
@@ -71,7 +129,7 @@ class _MyAppState extends State<MyApp> {
               Container(
                 height: 100.0,
                 child: PinCodeTextField(
-                  autofocus: false,
+                  autofocus: true,
                   controller: controller,
                   hideCharacter: true,
                   highlight: true,
@@ -152,12 +210,6 @@ class _MyAppState extends State<MyApp> {
                           this.hasError = true;
                         });
                       },
-                    ),
-                    MaterialButton(
-                      color: Colors.amber,
-                      textColor: Colors.white,
-                      child: Text("CHANGE TO CUPERTINO"),
-                      onPressed: changePlatform,
                     ),
                     MaterialButton(
                       color: Colors.pink,
@@ -283,11 +335,7 @@ class _MyAppState extends State<MyApp> {
                             this.hasError = true;
                           });
                         },
-                      ),
-                      CupertinoButton(
-                        child: Text("CHANGE TO MATERIAL"),
-                        onPressed: changePlatform,
-                      ),
+                      )
                     ],
                   ),
                 )

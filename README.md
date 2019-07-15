@@ -12,7 +12,7 @@ It's a Flutter widget for entering pin code. Suitable for use cases such as logi
 Add this to your package's pubspec.yaml file:
 ```
 dependencies:
-  pin_code_text_field: ^1.3.6
+  pin_code_text_field: ^1.3.7
 ```
 2. Install it
 You can install packages from the command line:
@@ -182,6 +182,7 @@ class MyHomePageState extends State<MyHomePage> {
 2. [Serge Shkurko](https://github.com/SergeShkurko)
 3. [Angga Dwi Arifandi](https://github.com/blackmenthor)
 4. [MozesMa](https://github.com/MozesMa)
+5. [jpeiffer](https://github.com/jpeiffer)
 
 Star 🌟 to show support!
 

@@ -208,7 +208,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
         widget.onTextChanged(widget.controller.text);
       }
     });
-    focusNode.addListener(() {
+    focusNode?.addListener(() {
       setState(() {
         hasFocus = focusNode.hasFocus;
       });
