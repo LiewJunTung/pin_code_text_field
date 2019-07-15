@@ -19,6 +19,13 @@ class _MyAppState extends State<MyApp> {
   String errorMessage;
 
   @override
+  void dispose() {
+    controller.dispose();
+
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return isMaterial
         ? new MaterialApp(
