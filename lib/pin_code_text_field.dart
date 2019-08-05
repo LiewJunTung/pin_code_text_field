@@ -93,6 +93,7 @@ class PinCodeTextField extends StatefulWidget {
   final WrapAlignment wrapAlignment;
   final PinCodeTextFieldLayoutType pinCodeTextFieldLayoutType;
   final TextDirection textDirection;
+  final TextInputType keyboardType;
 
   const PinCodeTextField({
     Key key,
@@ -120,6 +121,7 @@ class PinCodeTextField extends StatefulWidget {
     this.wrapAlignment: WrapAlignment.start,
     this.pinCodeTextFieldLayoutType: PinCodeTextFieldLayoutType.NORMAL,
     this.textDirection: TextDirection.ltr,
+    this.keyboardType: TextInputType.number
   }) : super(key: key);
 
   @override
@@ -311,7 +313,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
         autofocus: widget.autofocus,
         focusNode: focusNode,
         controller: widget.controller,
-        keyboardType: TextInputType.number,
+        keyboardType: widget.keyboardType,
         style: TextStyle(
           height: 0.1, color: Colors.transparent,
 //          color: Colors.transparent,
@@ -347,7 +349,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
         autofocus: widget.autofocus,
         focusNode: focusNode,
         controller: widget.controller,
-        keyboardType: TextInputType.number,
+        keyboardType: widget.keyboardType,
         style: TextStyle(
           color: Colors.transparent,
         ),
