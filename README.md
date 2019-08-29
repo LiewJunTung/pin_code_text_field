@@ -34,6 +34,10 @@ import 'package:pin_code_text_field/pin_code_text_field.dart';
 | maxLength | int | 4 | The total length of pin number & the number of pin boxes. |
 | hideCharacter | bool | false | Show or hide the pin code. |
 | highlight | bool | false | highlight the focused pin box. |
+| highlightAnimation | bool | false | animated highlight of the focused pin box. |
+| highlightAnimationBeginColor | Color | Colors.black | the starting color of the animated highlight. |
+| highlightAnimationEndColor | Color | Color.white | the ending color of the animated highlight. |
+| highlightAnimationDuration | Duration | 500ms | the duration of the highlight animation. |
 | highlightColor | Color | Colors.black | Set color of the focused pin box. |
 | pinBoxDecoration | BoxDecoration| ProvidedPinBoxDecoration._defaultPinBoxDecoration | Customization for the individual pin boxes. Check `ProvidedPinBoxDecoration` for possible options. |
 | pinTextStyle | TextStyle | | TextStyle for styling pin characters. |
