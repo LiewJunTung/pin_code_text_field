@@ -98,6 +98,7 @@ class PinCodeTextField extends StatefulWidget {
   final WrapAlignment wrapAlignment;
   final PinCodeTextFieldLayoutType pinCodeTextFieldLayoutType;
   final TextDirection textDirection;
+  final TextInputType keyboardType;
 
   const PinCodeTextField({
     Key key,
@@ -109,7 +110,7 @@ class PinCodeTextField extends StatefulWidget {
     this.highlightAnimation: false,
     this.highlightAnimationBeginColor: Colors.white,
     this.highlightAnimationEndColor: Colors.black,
-    this.highlightAnimationDuration: const Duration(),
+    this.highlightAnimationDuration,
     this.highlightColor: Colors.black,
     this.pinBoxDecoration,
     this.maskCharacter: " ",
@@ -129,6 +130,7 @@ class PinCodeTextField extends StatefulWidget {
     this.wrapAlignment: WrapAlignment.start,
     this.pinCodeTextFieldLayoutType: PinCodeTextFieldLayoutType.NORMAL,
     this.textDirection: TextDirection.ltr,
+    this.keyboardType: TextInputType.number,
   }) : super(key: key);
 
   @override
@@ -270,10 +272,6 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
       if (widget.controller.text.length > widget.maxLength) {
         throw Exception("TextEditingController length exceeded maxLength!");
       }
-
-      if (!_isNumeric(widget.controller.text)) {
-        throw Exception("TextEditingController can only contains numeric");
-      }
     }
 
     text = widget.controller.text;
@@ -341,8 +339,10 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
         autofocus: widget.autofocus,
         focusNode: focusNode,
         controller: widget.controller,
-        keyboardType: TextInputType.number,
-        inputFormatters: <TextInputFormatter>[WhitelistingTextInputFormatter.digitsOnly],
+        keyboardType: widget.keyboardType,
+        inputFormatters: widget.keyboardType == TextInputType.number
+            ? <TextInputFormatter>[WhitelistingTextInputFormatter.digitsOnly]
+            : null,
         style: TextStyle(
           height: 0.1, color: Colors.transparent,
 //          color: Colors.transparent,
@@ -378,8 +378,10 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
         autofocus: widget.autofocus,
         focusNode: focusNode,
         controller: widget.controller,
-        keyboardType: TextInputType.number,
-        inputFormatters: <TextInputFormatter>[WhitelistingTextInputFormatter.digitsOnly],
+        keyboardType: widget.keyboardType,
+        inputFormatters: widget.keyboardType == TextInputType.number
+            ? <TextInputFormatter>[WhitelistingTextInputFormatter.digitsOnly]
+            : null,
         style: TextStyle(
           color: Colors.transparent,
         ),

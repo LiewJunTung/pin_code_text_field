@@ -55,6 +55,7 @@ import 'package:pin_code_text_field/pin_code_text_field.dart';
 | wrapAlignment | WrapAlignment | WrapAlignment.start | Alignment of the wrapped pin boxes |
 | pinCodeTextFieldLayoutType | PinCodeTextFieldLayoutType | PinCodeTextFieldLayoutType.NORMAL | Auto adjust width with `PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH`, wrap the pin box row with `PinCodeTextFieldLayoutType.WRAP` |
 | textDirection | TextDirection | TextDirection.ltr | The direction of the pin code |
+| keyboardType | TextInputType | TextInputType.number | The type of the input keyboard |
 
 ## Example
 ```dart

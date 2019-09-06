@@ -157,6 +157,11 @@ class _MyAppState extends State<MyApp> {
                   pinTextAnimatedSwitcherTransition:
                       ProvidedPinBoxTextAnimation.awesomeTransition,
                   pinTextAnimatedSwitcherDuration: Duration(milliseconds: 300),
+                  highlightAnimation: true,
+                  highlightAnimationBeginColor: Colors.black,
+                  highlightAnimationEndColor: Colors.white12,
+                  keyboardType: TextInputType.number,
+
                 ),
               ),
               Visibility(
@@ -283,6 +288,9 @@ class _MyAppState extends State<MyApp> {
                   pinTextAnimatedSwitcherTransition:
                       ProvidedPinBoxTextAnimation.scalingTransition,
                   pinTextAnimatedSwitcherDuration: Duration(milliseconds: 300),
+                  highlightAnimation: true,
+                  highlightAnimationBeginColor: Colors.black,
+                  highlightAnimationEndColor: Colors.white12,
                 ),
                 Visibility(
                   child: Text(
