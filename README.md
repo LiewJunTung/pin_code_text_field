@@ -188,6 +188,7 @@ class MyHomePageState extends State<MyHomePage> {
 3. [Angga Dwi Arifandi](https://github.com/blackmenthor)
 4. [MozesMa](https://github.com/MozesMa)
 5. [jpeiffer](https://github.com/jpeiffer)
+6. [Thiago Porto]https://github.com/ThiagoNP)
 
 Star 🌟 to show support!
 
