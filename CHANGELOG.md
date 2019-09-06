@@ -1,3 +1,8 @@
+## [1.4.0] - 9 September 2019
+* Added highlight animation
+* Added ability to change keyboard type
+* Disallowed special characters when using numeric keyboard.
+
 ## [1.3.7] - 16 July 2019
 * Fixed #21 - Getting error dispose
 
