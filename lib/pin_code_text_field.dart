@@ -5,6 +5,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart' show CupertinoTextField;
 import 'package:flutter/material.dart';
 import 'package:flutter/animation.dart';
+import 'package:flutter/services.dart';
 
 typedef OnDone = void Function(String text);
 typedef PinBoxDecoration = BoxDecoration Function(Color borderColor);
@@ -312,6 +313,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
         focusNode: focusNode,
         controller: widget.controller,
         keyboardType: TextInputType.number,
+        inputFormatters: <TextInputFormatter>[WhitelistingTextInputFormatter.digitsOnly],
         style: TextStyle(
           height: 0.1, color: Colors.transparent,
 //          color: Colors.transparent,
@@ -348,6 +350,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField> {
         focusNode: focusNode,
         controller: widget.controller,
         keyboardType: TextInputType.number,
+        inputFormatters: <TextInputFormatter>[WhitelistingTextInputFormatter.digitsOnly],
         style: TextStyle(
           color: Colors.transparent,
         ),
