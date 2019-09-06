@@ -9,15 +9,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="454e3a70-107c-46fa-b354-df0efe7224c0" name="Default" comment="[1.3.6] #13">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="454e3a70-107c-46fa-b354-df0efe7224c0" name="Default" comment="[1.4.0] Merged a few pull requests with keyboardType">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pin_code_text_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pin_code_text_field.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pin_code_text_field.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pin_code_text_field.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -38,8 +33,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="162" column="52" selection-start-line="162" selection-start-column="52" selection-end-line="162" selection-end-column="52" />
+            <state relative-caret-position="291">
+              <caret line="159" column="52" selection-start-line="159" selection-start-column="52" selection-end-line="159" selection-end-column="52" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -50,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/pin_code_text_field.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="275" column="6" selection-start-line="275" selection-start-column="6" selection-end-line="277" selection-end-column="9" />
+            <state relative-caret-position="-69">
+              <caret line="345" column="25" selection-start-line="345" selection-start-column="25" selection-end-line="345" selection-end-column="25" />
               <folding>
                 <element signature="e#30#50#0" expanded="true" />
               </folding>
@@ -429,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557243028059</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="[1.4.0] Merged a few pull requests with keyboardType">
+      <created>1567735043863</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1567735043863</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -584,7 +586,8 @@
     <MESSAGE value="1.3.2 added check" />
     <MESSAGE value="[1.3.5] #13" />
     <MESSAGE value="[1.3.6] #13" />
-    <option name="LAST_COMMIT_MESSAGE" value="[1.3.6] #13" />
+    <MESSAGE value="[1.4.0] Merged a few pull requests with keyboardType" />
+    <option name="LAST_COMMIT_MESSAGE" value="[1.4.0] Merged a few pull requests with keyboardType" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/JT_APPs/flutter/packages/flutter/lib/src/widgets/visibility.dart" />
@@ -742,8 +745,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/pin_code_text_field.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="275" column="6" selection-start-line="275" selection-start-column="6" selection-end-line="277" selection-end-column="9" />
+        <state relative-caret-position="-69">
+          <caret line="345" column="25" selection-start-line="345" selection-start-column="25" selection-end-line="345" selection-end-column="25" />
           <folding>
             <element signature="e#30#50#0" expanded="true" />
           </folding>
@@ -752,8 +755,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="162" column="52" selection-start-line="162" selection-start-column="52" selection-end-line="162" selection-end-column="52" />
+        <state relative-caret-position="291">
+          <caret line="159" column="52" selection-start-line="159" selection-start-column="52" selection-end-line="159" selection-end-column="52" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

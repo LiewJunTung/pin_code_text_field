@@ -130,7 +130,7 @@ class PinCodeTextField extends StatefulWidget {
     this.wrapAlignment: WrapAlignment.start,
     this.pinCodeTextFieldLayoutType: PinCodeTextFieldLayoutType.NORMAL,
     this.textDirection: TextDirection.ltr,
-    this.keyboardType: TextInputType.number,
+    this.keyboardType: TextInputType.number
   }) : super(key: key);
 
   @override
