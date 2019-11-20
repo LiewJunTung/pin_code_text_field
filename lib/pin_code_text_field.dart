@@ -2,9 +2,9 @@ library pin_code_text_field;
 
 import 'dart:async';
 
+import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart' show CupertinoTextField;
 import 'package:flutter/material.dart';
-import 'package:flutter/animation.dart';
 import 'package:flutter/services.dart';
 
 typedef OnDone = void Function(String text);
@@ -99,6 +99,7 @@ class PinCodeTextField extends StatefulWidget {
   final PinCodeTextFieldLayoutType pinCodeTextFieldLayoutType;
   final TextDirection textDirection;
   final TextInputType keyboardType;
+  final EdgeInsets pinBoxOuterPadding;
 
   const PinCodeTextField({
     Key key,
@@ -130,7 +131,8 @@ class PinCodeTextField extends StatefulWidget {
     this.wrapAlignment: WrapAlignment.start,
     this.pinCodeTextFieldLayoutType: PinCodeTextFieldLayoutType.NORMAL,
     this.textDirection: TextDirection.ltr,
-    this.keyboardType: TextInputType.number
+    this.keyboardType: TextInputType.number,
+    this.pinBoxOuterPadding = const EdgeInsets.symmetric(horizontal: 4.0),
   }) : super(key: key);
 
   @override
@@ -299,7 +301,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           _touchPinBoxRow(),
           !widget.isCupertino ? _fakeTextInput() : _fakeTextInputCupertino(),
@@ -332,41 +334,45 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
         width: 0.0,
       ),
     );
-    return Container(
-      width: 0.1,
-      height: 8.0, // RenderBoxDecorator subtextGap constant is 8.0
-      child: TextField(
-        autofocus: widget.autofocus,
-        focusNode: focusNode,
-        controller: widget.controller,
-        keyboardType: widget.keyboardType,
-        inputFormatters: widget.keyboardType == TextInputType.number
-            ? <TextInputFormatter>[WhitelistingTextInputFormatter.digitsOnly]
-            : null,
-        style: TextStyle(
-          height: 0.1, color: Colors.transparent,
+    return Stack(
+      children: <Widget>[
+        Container(
+          width: 0.1,
+          height: 8.0, // RenderBoxDecorator subtextGap constant is 8.0
+          child: TextField(
+            autofocus: widget.autofocus,
+            focusNode: focusNode,
+            controller: widget.controller,
+            keyboardType: widget.keyboardType,
+            inputFormatters: widget.keyboardType == TextInputType.number
+                ? <TextInputFormatter>[WhitelistingTextInputFormatter.digitsOnly]
+                : null,
+            style: TextStyle(
+              height: 0.1, color: Colors.transparent,
 //          color: Colors.transparent,
-        ),
-        decoration: InputDecoration(
-          focusedErrorBorder: transparentBorder,
-          errorBorder: transparentBorder,
-          disabledBorder: transparentBorder,
-          enabledBorder: transparentBorder,
-          focusedBorder: transparentBorder,
-          counterText: null,
-          counterStyle: null,
-          helperStyle: TextStyle(
-            height: 0.0,
-            color: Colors.transparent,
+            ),
+            decoration: InputDecoration(
+              focusedErrorBorder: transparentBorder,
+              errorBorder: transparentBorder,
+              disabledBorder: transparentBorder,
+              enabledBorder: transparentBorder,
+              focusedBorder: transparentBorder,
+              counterText: null,
+              counterStyle: null,
+              helperStyle: TextStyle(
+                height: 0.0,
+                color: Colors.transparent,
+              ),
+              labelStyle: TextStyle(height: 0.1),
+              fillColor: Colors.transparent,
+              border: InputBorder.none,
+            ),
+            cursorColor: Colors.transparent,
+            maxLength: widget.maxLength,
+            onChanged: _onTextChanged,
           ),
-          labelStyle: TextStyle(height: 0.1),
-          fillColor: Colors.transparent,
-          border: InputBorder.none,
         ),
-        cursorColor: Colors.transparent,
-        maxLength: widget.maxLength,
-        onChanged: _onTextChanged,
-      ),
+      ],
     );
   }
 
@@ -425,7 +431,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
     return widget.pinCodeTextFieldLayoutType == PinCodeTextFieldLayoutType.WRAP
         ? Wrap(
             direction: Axis.horizontal,
-            alignment: widget.wrapAlignment,
+            alignment: WrapAlignment.spaceBetween,
             verticalDirection: VerticalDirection.down,
             textDirection: widget.textDirection,
             children: pinCodes,
@@ -481,9 +487,26 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
       boxDecoration =
           ProvidedPinBoxDecoration.defaultPinBoxDecoration(borderColor);
     }
-
+    EdgeInsets insets;
+    if (i == 0) {
+      insets = EdgeInsets.only(
+        left: 0,
+        top: widget.pinBoxOuterPadding.top,
+        right: widget.pinBoxOuterPadding.right,
+        bottom: widget.pinBoxOuterPadding.bottom,
+      );
+    } else if (i == strList.length - 1) {
+      insets = EdgeInsets.only(
+        left: widget.pinBoxOuterPadding.left,
+        top: widget.pinBoxOuterPadding.top,
+        right: 0,
+        bottom: widget.pinBoxOuterPadding.bottom,
+      );
+    } else {
+      insets = widget.pinBoxOuterPadding;
+    }
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+      padding: insets,
       child: Container(
         key: ValueKey<String>("container$i"),
         child: Center(child: _animatedTextBox(strList[i], i)),
