@@ -4,7 +4,7 @@
 
 # pin_code_text_field
 
-It's a Flutter widget for entering pin code. Suitable for use cases such as login and OTP.
+It's a beautiful and highly customizable Flutter widget for entering pin code. Suitable for use cases such as login and OTP.
 
 # Usage
 ## Use this package as a library
@@ -12,7 +12,7 @@ It's a Flutter widget for entering pin code. Suitable for use cases such as logi
 Add this to your package's pubspec.yaml file:
 ```
 dependencies:
-  pin_code_text_field: ^1.4.0
+  pin_code_text_field: <VERSION>
 ```
 2. Install it
 You can install packages from the command line:
@@ -53,9 +53,11 @@ import 'package:pin_code_text_field/pin_code_text_field.dart';
 | hasError | bool | false | set all border color to `errorBorderColor` |
 | autofocus | bool | false | Autofocus on view entered |
 | wrapAlignment | WrapAlignment | WrapAlignment.start | Alignment of the wrapped pin boxes |
-| pinCodeTextFieldLayoutType | PinCodeTextFieldLayoutType | PinCodeTextFieldLayoutType.NORMAL | Auto adjust width with `PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH`, wrap the pin box row with `PinCodeTextFieldLayoutType.WRAP` |
 | textDirection | TextDirection | TextDirection.ltr | The direction of the pin code |
 | keyboardType | TextInputType | TextInputType.number | The type of the input keyboard |
+| pinBoxColor | Color | null| Color of the pin boxes (Will be overridden by custom PinBoxDecoration) |
+| pinBoxBorderWidth | double | 2 | Border Width of pin boxes |
+| pinBoxRadius | double | 0 | The type of the input keyboard |
 
 ## Example
 ```dart
@@ -180,7 +182,14 @@ class MyHomePageState extends State<MyHomePage> {
 ## Wishlist
 1. ~~Localization (L-R, R-L)~~
 2. ~~Highlight animation~~
-3. Pin Box animation
+3. ~~Pin Box animation~~
+4. BoxDecoratorBuilder for customizing individual pin boxes
+
+## Tips and Tricks:
+1. Copy and pasting
+   Wrap the `PinCodeTextField` in `GestureDetector`, the launch an AlertDialog to
+   access the `Clipboard` and paste the strings to the `TextEditController` of 
+   the `PinCodeTextField`
 
 ## Contributors
 1. [Liew Jun Tung](https://github.com/LiewJunTung)

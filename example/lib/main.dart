@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 
-const String MATERIAL_SCREEN = "MATERIAL_SCREEN";
+const String MATERIAL_SCREEN = "/material_screen";
+const String CUPERTINO_SCREEN = "/cupertino_screen";
 
 void main() => runApp(new SampleApp());
 
@@ -19,14 +22,17 @@ class SampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MainApp(),
-      onGenerateRoute: (RouteSettings settings) {
-        switch (settings.name) {
-          case MATERIAL_SCREEN:
-            bool isMaterial = settings.arguments;
-            return _buildRoute(settings, MyApp(isMaterial: isMaterial,));
-        }
+//      home: MainApp(),
+//      initialRoute: '/',
+      routes: {
+        MATERIAL_SCREEN: (context) => MyApp(
+              isMaterial: true,
+            ),
+        CUPERTINO_SCREEN: (context) => MyApp(
+              isMaterial: false,
+            ),
       },
+      home: MainApp(),
     );
   }
 }
@@ -42,28 +48,25 @@ class MainApp extends StatelessWidget {
         child: Container(
           child: Column(
             children: <Widget>[
-              TextField(
-                autofocus: true,
-              ),
               RaisedButton(
                 child: Text("Material"),
                 onPressed: () {
-                  Navigator.of(context).pushNamed(MATERIAL_SCREEN, arguments:  true);
+                  Navigator.pushNamed(context, MATERIAL_SCREEN);
                 },
               ),
-              RaisedButton(
-                child: Text("Cupertino"),
-                onPressed: () {
-                  Navigator.of(context).pushNamed(MATERIAL_SCREEN, arguments: false);
-                },
-              )
+              if (!kIsWeb)
+                RaisedButton(
+                  child: Text("Cupertino"),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(CUPERTINO_SCREEN);
+                  },
+                )
             ],
           ),
         ),
       ),
     );
   }
-
 }
 
 class MyApp extends StatefulWidget {
@@ -120,7 +123,7 @@ class _MyAppState extends State<MyApp> {
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+//            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(bottom: 60.0),
@@ -128,40 +131,69 @@ class _MyAppState extends State<MyApp> {
               ),
               Container(
                 height: 100.0,
-                child: PinCodeTextField(
-                  autofocus: true,
-                  controller: controller,
-                  hideCharacter: true,
-                  highlight: true,
-                  highlightColor: Colors.blue,
-                  defaultBorderColor: Colors.black,
-                  hasTextBorderColor: Colors.green,
-                  maxLength: pinLength,
-                  hasError: hasError,
-                  maskCharacter: "😎",
-                  onTextChanged: (text) {
-                    setState(() {
-                      hasError = false;
-                    });
+                child: GestureDetector(
+                  onLongPress: () {
+                    print("LONG");
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            content:
+                                Text("Paste clipboard stuff into the pinbox?"),
+                            actions: <Widget>[
+                              FlatButton(
+                                  onPressed: () async {
+                                    var copiedText =
+                                        await Clipboard.getData("text/plain");
+                                    if (copiedText.text.isNotEmpty) {
+                                      controller.text = copiedText.text;
+                                    }
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Text("YES")),
+                              FlatButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Text("No"))
+                            ],
+                          );
+                        });
                   },
-                  onDone: (text) {
-                    print("DONE $text");
-                    print("DONE CONTROLLER ${controller.text}");
-                  },
-                  pinCodeTextFieldLayoutType:
-                      PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH,
-                  wrapAlignment: WrapAlignment.start,
-                  pinBoxDecoration:
-                      ProvidedPinBoxDecoration.underlinedPinBoxDecoration,
-                  pinTextStyle: TextStyle(fontSize: 30.0),
-                  pinTextAnimatedSwitcherTransition:
-                      ProvidedPinBoxTextAnimation.awesomeTransition,
-                  pinTextAnimatedSwitcherDuration: Duration(milliseconds: 300),
-                  highlightAnimation: true,
-                  highlightAnimationBeginColor: Colors.black,
-                  highlightAnimationEndColor: Colors.white12,
-                  keyboardType: TextInputType.number,
-
+                  child: PinCodeTextField(
+                    autofocus: true,
+                    controller: controller,
+                    hideCharacter: true,
+                    highlight: true,
+                    highlightColor: Colors.blue,
+                    defaultBorderColor: Colors.black,
+                    hasTextBorderColor: Colors.green,
+                    maxLength: pinLength,
+                    hasError: hasError,
+                    maskCharacter: "😎",
+                    onTextChanged: (text) {
+                      setState(() {
+                        hasError = false;
+                      });
+                    },
+                    onDone: (text) {
+                      print("DONE $text");
+                      print("DONE CONTROLLER ${controller.text}");
+                    },
+                    wrapAlignment: WrapAlignment.spaceAround,
+                    pinBoxDecoration:
+                        ProvidedPinBoxDecoration.defaultPinBoxDecoration,
+                    pinTextStyle: TextStyle(fontSize: 30.0),
+                    pinTextAnimatedSwitcherTransition:
+                        ProvidedPinBoxTextAnimation.scalingTransition,
+//                    pinBoxColor: Colors.green[100],
+                    pinTextAnimatedSwitcherDuration:
+                        Duration(milliseconds: 300),
+//                    highlightAnimation: true,
+                    highlightAnimationBeginColor: Colors.black,
+                    highlightAnimationEndColor: Colors.white12,
+                    keyboardType: TextInputType.number,
+                  ),
                 ),
               ),
               Visibility(
@@ -176,6 +208,17 @@ class _MyAppState extends State<MyApp> {
                 child: Wrap(
                   alignment: WrapAlignment.spaceEvenly,
                   children: <Widget>[
+                    if (!kIsWeb)
+                      MaterialButton(
+                        color: Colors.blue,
+                        textColor: Colors.white,
+                        child: Text("Copy 1234 to Clipboard"),
+                        onPressed: () {
+                          setState(() {
+                            Clipboard.setData(ClipboardData(text: "1111"));
+                          });
+                        },
+                      ),
                     MaterialButton(
                       color: Colors.blue,
                       textColor: Colors.white,
@@ -250,104 +293,106 @@ class _MyAppState extends State<MyApp> {
       child: SafeArea(
         child: Container(
           child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 60.0),
-                  child: Text(thisText),
-                ),
-                PinCodeTextField(
-                  autofocus: false,
-                  controller: controller,
-                  hideCharacter: true,
-                  highlight: true,
-                  highlightColor: CupertinoColors.activeBlue,
-                  defaultBorderColor: CupertinoColors.black,
-                  hasTextBorderColor: CupertinoColors.activeGreen,
-                  maxLength: pinLength,
-                  hasError: hasError,
-                  maskCharacter: "🐶",
-                  onTextChanged: (text) {
-                    setState(() {
-                      hasError = false;
-                      thisText = text;
-                    });
-                  },
-                  isCupertino: true,
-                  onDone: (text) {
-                    print("DONE $text");
-                  },
-                  pinCodeTextFieldLayoutType:
-                      PinCodeTextFieldLayoutType.AUTO_ADJUST_WIDTH,
-                  wrapAlignment: WrapAlignment.start,
-                  pinBoxDecoration:
-                      ProvidedPinBoxDecoration.defaultPinBoxDecoration,
-                  pinTextStyle: TextStyle(fontSize: 30.0),
-                  pinTextAnimatedSwitcherTransition:
-                      ProvidedPinBoxTextAnimation.scalingTransition,
-                  pinTextAnimatedSwitcherDuration: Duration(milliseconds: 300),
-                  highlightAnimation: true,
-                  highlightAnimationBeginColor: Colors.black,
-                  highlightAnimationEndColor: Colors.white12,
-                ),
-                Visibility(
-                  child: Text(
-                    "Wrong PIN!",
-                    style: TextStyle(color: CupertinoColors.destructiveRed),
+            child: Container(
+              color: Colors.blue,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 60.0),
+                    child: Text(thisText),
                   ),
-                  visible: hasError,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 32.0),
-                  child: Wrap(
-                    alignment: WrapAlignment.spaceEvenly,
-                    children: <Widget>[
-                      CupertinoButton(
+                  PinCodeTextField(
+                    autofocus: false,
+                    controller: controller,
+                    hideCharacter: true,
+                    highlight: true,
+                    highlightColor: CupertinoColors.activeBlue,
+                    defaultBorderColor: CupertinoColors.black,
+                    hasTextBorderColor: CupertinoColors.activeGreen,
+                    maxLength: pinLength,
+                    hasError: hasError,
+                    maskCharacter: "🐶",
+                    onTextChanged: (text) {
+                      setState(() {
+                        hasError = false;
+                        thisText = text;
+                      });
+                    },
+                    isCupertino: true,
+                    onDone: (text) {
+                      print("DONE $text");
+                    },
+                    wrapAlignment: WrapAlignment.end,
+                    pinBoxDecoration:
+                        ProvidedPinBoxDecoration.roundedPinBoxDecoration,
+                    pinTextStyle: TextStyle(fontSize: 30.0),
+                    pinTextAnimatedSwitcherTransition:
+                        ProvidedPinBoxTextAnimation.scalingTransition,
+                    pinTextAnimatedSwitcherDuration:
+                        Duration(milliseconds: 300),
+                    highlightAnimation: true,
+                    highlightAnimationBeginColor: Colors.black,
+                    highlightAnimationEndColor: Colors.white12,
+                  ),
+                  Visibility(
+                    child: Text(
+                      "Wrong PIN!",
+                      style: TextStyle(color: CupertinoColors.destructiveRed),
+                    ),
+                    visible: hasError,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 32.0),
+                    child: Wrap(
+                      alignment: WrapAlignment.spaceEvenly,
+                      children: <Widget>[
+                        CupertinoButton(
 //                      color: Colors.blue,
 //                      textColor: Colors.white,
-                        child: Text("+"),
-                        onPressed: () {
-                          setState(() {
-                            this.pinLength++;
-                          });
-                        },
-                      ),
-                      CupertinoButton(
+                          child: Text("+"),
+                          onPressed: () {
+                            setState(() {
+                              this.pinLength++;
+                            });
+                          },
+                        ),
+                        CupertinoButton(
 //                      color: Colors.blue,
 //                      textColor: Colors.white,
-                        child: Text("-"),
-                        onPressed: () {
-                          setState(() {
-                            this.pinLength--;
-                          });
-                        },
-                      ),
-                      CupertinoButton(
+                          child: Text("-"),
+                          onPressed: () {
+                            setState(() {
+                              this.pinLength--;
+                            });
+                          },
+                        ),
+                        CupertinoButton(
 //                      color: Colors.blue,
 //                      textColor: Colors.white,
-                        child: Text("SUBMIT"),
-                        onPressed: () {
-                          setState(() {
-                            this.thisText = controller.text;
-                          });
-                        },
-                      ),
-                      CupertinoButton(
+                          child: Text("SUBMIT"),
+                          onPressed: () {
+                            setState(() {
+                              this.thisText = controller.text;
+                            });
+                          },
+                        ),
+                        CupertinoButton(
 //                      color: Colors.red,
 //                      textColor: Colors.white,
-                        child: Text("SUBMIT Error"),
-                        onPressed: () {
-                          setState(() {
-                            this.hasError = true;
-                          });
-                        },
-                      )
-                    ],
-                  ),
-                )
-              ],
+                          child: Text("SUBMIT Error"),
+                          onPressed: () {
+                            setState(() {
+                              this.hasError = true;
+                            });
+                          },
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),

@@ -1,3 +1,9 @@
+## [1.5.0]
+* Fixed WrapAlignment bug
+* Web support
+* Added ProvidedPinBoxDecoration.roundedPinBoxDecoration
+* Updated Examples
+
 ## [1.4.0] - 9 September 2019
 * Added highlight animation
 * Added ability to change keyboard type
