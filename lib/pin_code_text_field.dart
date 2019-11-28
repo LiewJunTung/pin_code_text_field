@@ -434,8 +434,10 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
       if (text.length < currentIndex) {
         strList[text.length] = "";
       } else {
-        strList[text.length - 1] =
-            widget.hideCharacter ? widget.maskCharacter : text[text.length - 1];
+        for (int i = currentIndex; i < text.length; i ++) {
+          strList[i] =
+          widget.hideCharacter ? widget.maskCharacter : text[i];
+        }
       }
       currentIndex = text.length;
     });
