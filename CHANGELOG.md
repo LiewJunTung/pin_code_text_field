@@ -1,3 +1,6 @@
+## [1.6.0]
+* Implemented `show entire code when pasting` by MosesMa
+
 ## [1.5.0]
 * Fixed WrapAlignment bug
 * Web support
