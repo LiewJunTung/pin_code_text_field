@@ -39,6 +39,7 @@ import 'package:pin_code_text_field/pin_code_text_field.dart';
 | highlightAnimationEndColor | Color | Color.white | the ending color of the animated highlight. |
 | highlightAnimationDuration | Duration | 500ms | the duration of the highlight animation. |
 | highlightColor | Color | Colors.black | Set color of the focused pin box. |
+| highlightBuilder | Function(String char, int index) | null | Highlight TextBox builder |
 | pinBoxDecoration | BoxDecoration| ProvidedPinBoxDecoration._defaultPinBoxDecoration | Customization for the individual pin boxes. Check `ProvidedPinBoxDecoration` for possible options. |
 | pinTextStyle | TextStyle | | TextStyle for styling pin characters. |
 | maskCharacter | String | "\u25CF" | Special character to mask the pin code. Will only work if `hideCharacter` is set to `true`. |

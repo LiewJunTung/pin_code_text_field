@@ -142,6 +142,7 @@ class PinCodeTextField extends StatefulWidget {
   final TextDirection textDirection;
   final TextInputType keyboardType;
   final EdgeInsets pinBoxOuterPadding;
+  final Function highlightBuilder;
 
   const PinCodeTextField({
     Key key,
@@ -177,6 +178,7 @@ class PinCodeTextField extends StatefulWidget {
     this.pinBoxColor,
     this.pinBoxBorderWidth = 2.0,
     this.pinBoxRadius = 0,
+    this.highlightBuilder,
   }) : super(key: key);
 
   @override
@@ -556,7 +558,23 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
             (i == text.length - 1 && text.length == widget.maxLength));
   }
 
+  Widget _buildTextBoxContent(str, i) {
+    Widget result;
+    if (_shouldHighlight(i) && widget.highlightBuilder != null) {
+      result = widget.highlightBuilder(str, i);
+    }
+    if (result == null) {
+      result = Text(
+        str,
+        key: ValueKey<String>("$str$i"),
+        style: widget.pinTextStyle,
+      );
+    }
+    return result;
+  }
+
   Widget _animatedTextBox(String text, int i) {
+    Widget content = _buildTextBoxContent(text, i);
     if (widget.pinTextAnimatedSwitcherTransition != null) {
       return AnimatedSwitcher(
         duration: widget.pinTextAnimatedSwitcherDuration,
@@ -564,18 +582,10 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
             (Widget child, Animation<double> animation) {
               return child;
             },
-        child: Text(
-          text,
-          key: ValueKey<String>("$text$i"),
-          style: widget.pinTextStyle,
-        ),
+        child: content,
       );
     } else {
-      return Text(
-        text,
-        key: ValueKey<String>("${strList[i]}$i"),
-        style: widget.pinTextStyle,
-      );
+      return content;
     }
   }
 }
