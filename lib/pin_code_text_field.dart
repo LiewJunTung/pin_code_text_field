@@ -142,9 +142,11 @@ class PinCodeTextField extends StatefulWidget {
   final TextDirection textDirection;
   final TextInputType keyboardType;
   final EdgeInsets pinBoxOuterPadding;
+  final bool readonly;
 
   const PinCodeTextField({
     Key key,
+    this.readonly,
     this.isCupertino: false,
     this.maxLength: 4,
     this.controller,
@@ -361,6 +363,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
           width: 0.1,
           height: 16.0, // RenderBoxDecorator subtextGap constant is 8.0
           child: TextField(
+            readOnly: widget.readonly,
             autofocus: !kIsWeb ? widget.autofocus : false,
             focusNode: focusNode,
             controller: widget.controller,
@@ -404,6 +407,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
       width: 0.1,
       height: 0.1,
       child: CupertinoTextField(
+        readOnly: widget.readonly,
         autofocus: !kIsWeb ? widget.autofocus : false,
         focusNode: focusNode,
         controller: widget.controller,
