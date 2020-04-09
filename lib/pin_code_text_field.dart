@@ -156,7 +156,7 @@ class PinCodeTextField extends StatefulWidget {
     this.highlightAnimationDuration,
     this.highlightColor: Colors.black,
     this.pinBoxDecoration,
-    this.maskCharacter: " ",
+    this.maskCharacter: "\u25CF",
     this.pinBoxWidth: 70.0,
     this.pinBoxHeight: 70.0,
     this.pinTextStyle,
