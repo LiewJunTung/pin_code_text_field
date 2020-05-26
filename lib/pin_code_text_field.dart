@@ -123,6 +123,7 @@ class PinCodeTextField extends StatefulWidget {
   final Color highlightPinBoxColor;
   final double pinBoxBorderWidth;
   final double pinBoxRadius;
+  final bool hideDefaultKeyboard;
   final PinBoxDecoration pinBoxDecoration;
   final String maskCharacter;
   final TextStyle pinTextStyle;
@@ -177,6 +178,7 @@ class PinCodeTextField extends StatefulWidget {
     this.highlightPinBoxColor,
     this.pinBoxBorderWidth = 2.0,
     this.pinBoxRadius = 0,
+    this.hideDefaultKeyboard = false,
   }) : super(key: key);
 
   @override
@@ -341,20 +343,22 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
   }
 
   Widget _touchPinBoxRow() {
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTap: () {
-        if (hasFocus) {
-          FocusScope.of(context).requestFocus(FocusNode());
-          Future.delayed(Duration(milliseconds: 100), () {
-            FocusScope.of(context).requestFocus(focusNode);
-          });
-        } else {
-          FocusScope.of(context).requestFocus(focusNode);
-        }
-      },
-      child: _pinBoxRow(context),
-    );
+    return widget.hideDefaultKeyboard
+        ? _pinBoxRow(context)
+        : GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () {
+              if (hasFocus) {
+                FocusScope.of(context).requestFocus(FocusNode());
+                Future.delayed(Duration(milliseconds: 100), () {
+                  FocusScope.of(context).requestFocus(focusNode);
+                });
+              } else {
+                FocusScope.of(context).requestFocus(focusNode);
+              }
+            },
+            child: _pinBoxRow(context),
+          );
   }
 
   Widget _fakeTextInput() {
