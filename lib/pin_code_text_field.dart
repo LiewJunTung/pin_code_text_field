@@ -282,6 +282,13 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
     }
   }
 
+  bool _isNumeric(String s) {
+    if (s == null) {
+      return false;
+    }
+    var n = int.tryParse(s);
+    return n != null && n > -1;
+  }
 
   void _initTextController() {
     if (widget.controller == null) {
@@ -298,23 +305,6 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
     for (var i = 0; i < text.length; i++) {
       strList.add(widget.hideCharacter ? widget.maskCharacter : text[i]);
     }
-  }
-
-  double get _width {
-    var width = 0.0;
-    for (var i = 0; i < widget.maxLength; i++) {
-      width += widget.pinBoxWidth;
-      if (i == 0) {
-        width += widget.pinBoxOuterPadding?.left ?? 0;
-      } else if (i + 1 == widget.maxLength) {
-        width += widget.pinBoxOuterPadding?.right ?? 0;
-      } else {
-        width += widget.pinBoxOuterPadding?.left ??
-            0 + widget.pinBoxOuterPadding?.right ??
-            0;
-      }
-    }
-    return width;
   }
 
   @override
@@ -334,7 +324,8 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         _touchPinBoxRow(),
         !widget.isCupertino ? _fakeTextInput() : _fakeTextInputCupertino(),
@@ -368,49 +359,54 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
         width: 0.0,
       ),
     );
-    return Container(
-      width: _width,
-      height: widget.pinBoxHeight,
-      child: TextField(
-        autofocus: !kIsWeb ? widget.autofocus : false,
-        focusNode: focusNode,
-        controller: widget.controller,
-        keyboardType: widget.keyboardType,
-        inputFormatters: widget.keyboardType == TextInputType.number
-            ? <TextInputFormatter>[WhitelistingTextInputFormatter.digitsOnly]
-            : null,
-        style: TextStyle(
-          height: 0.1, color: Colors.transparent,
+    return Stack(
+      children: <Widget>[
+        Container(
+          width: 0.1,
+          height: 16.0, // RenderBoxDecorator subtextGap constant is 8.0
+          child: TextField(
+            autofocus: !kIsWeb ? widget.autofocus : false,
+            focusNode: focusNode,
+            controller: widget.controller,
+            keyboardType: widget.keyboardType,
+            inputFormatters: widget.keyboardType == TextInputType.number
+                ? <TextInputFormatter>[
+                    WhitelistingTextInputFormatter.digitsOnly
+                  ]
+                : null,
+            style: TextStyle(
+              height: 0.1, color: Colors.transparent,
 //          color: Colors.transparent,
-        ),
-        decoration: InputDecoration(
-          focusedErrorBorder: transparentBorder,
-          errorBorder: transparentBorder,
-          disabledBorder: transparentBorder,
-          enabledBorder: transparentBorder,
-          focusedBorder: transparentBorder,
-          counterText: null,
-          counterStyle: null,
-          helperStyle: TextStyle(
-            height: 0.0,
-            color: Colors.transparent,
+            ),
+            decoration: InputDecoration(
+              focusedErrorBorder: transparentBorder,
+              errorBorder: transparentBorder,
+              disabledBorder: transparentBorder,
+              enabledBorder: transparentBorder,
+              focusedBorder: transparentBorder,
+              counterText: null,
+              counterStyle: null,
+              helperStyle: TextStyle(
+                height: 0.0,
+                color: Colors.transparent,
+              ),
+              labelStyle: TextStyle(height: 0.1),
+              fillColor: Colors.transparent,
+              border: InputBorder.none,
+            ),
+            cursorColor: Colors.transparent,
+            maxLength: widget.maxLength,
+            onChanged: _onTextChanged,
           ),
-          labelStyle: TextStyle(height: 0.1),
-          fillColor: Colors.transparent,
-          border: InputBorder.none,
         ),
-        cursorColor: Colors.transparent,
-        showCursor: false,
-        maxLength: widget.maxLength,
-        onChanged: _onTextChanged,
-      ),
+      ],
     );
   }
 
   Widget _fakeTextInputCupertino() {
     return Container(
-      width: _width,
-      height: widget.pinBoxHeight,
+      width: 0.1,
+      height: 0.1,
       child: CupertinoTextField(
         autofocus: !kIsWeb ? widget.autofocus : false,
         focusNode: focusNode,
@@ -427,7 +423,6 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
           border: null,
         ),
         cursorColor: Colors.transparent,
-        showCursor: false,
         maxLength: widget.maxLength,
         onChanged: _onTextChanged,
       ),
@@ -443,8 +438,9 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
       if (text.length < currentIndex) {
         strList[text.length] = "";
       } else {
-        for (int i = currentIndex; i < text.length; i++) {
-          strList[i] = widget.hideCharacter ? widget.maskCharacter : text[i];
+        for (int i = currentIndex; i < text.length; i ++) {
+          strList[i] =
+          widget.hideCharacter ? widget.maskCharacter : text[i];
         }
       }
       currentIndex = text.length;
