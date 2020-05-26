@@ -1,5 +1,3 @@
-library pin_code_text_field;
-
 import 'dart:async';
 
 import 'package:flutter/animation.dart';
@@ -122,6 +120,7 @@ class PinCodeTextField extends StatefulWidget {
   final Color highlightColor;
   final Color defaultBorderColor;
   final Color pinBoxColor;
+  final Color highlightPinBoxColor;
   final double pinBoxBorderWidth;
   final double pinBoxRadius;
   final PinBoxDecoration pinBoxDecoration;
@@ -175,6 +174,7 @@ class PinCodeTextField extends StatefulWidget {
     this.keyboardType: TextInputType.number,
     this.pinBoxOuterPadding = const EdgeInsets.symmetric(horizontal: 4.0),
     this.pinBoxColor,
+    this.highlightPinBoxColor,
     this.pinBoxBorderWidth = 2.0,
     this.pinBoxRadius = 0,
   }) : super(key: key);
@@ -467,10 +467,12 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
 
   Widget _buildPinCode(int i, BuildContext context) {
     Color borderColor;
+    Color pinBoxColor;
     BoxDecoration boxDecoration;
     if (widget.hasError) {
       borderColor = widget.errorBorderColor;
     } else if (widget.highlightAnimation && _shouldHighlight(i)) {
+      pinBoxColor = widget.pinBoxColor;
       return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4.0),
           child: AnimatedBuilder(
@@ -479,7 +481,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
                 if (widget.pinBoxDecoration != null) {
                   boxDecoration = widget.pinBoxDecoration(
                     _highlightAnimationColorTween.value,
-                    widget.pinBoxColor,
+                    pinBoxColor,
                     borderWidth: widget.pinBoxBorderWidth,
                     radius: widget.pinBoxRadius,
                   );
@@ -487,7 +489,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
                   boxDecoration =
                       ProvidedPinBoxDecoration.defaultPinBoxDecoration(
                     _highlightAnimationColorTween.value,
-                    widget.pinBoxColor,
+                    pinBoxColor,
                     borderWidth: widget.pinBoxBorderWidth,
                     radius: widget.pinBoxRadius,
                   );
@@ -503,23 +505,26 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
               }));
     } else if (widget.highlight && _shouldHighlight(i)) {
       borderColor = widget.highlightColor;
+      pinBoxColor = widget.highlightPinBoxColor;
     } else if (i < text.length) {
       borderColor = widget.hasTextBorderColor;
+      pinBoxColor = widget.highlightPinBoxColor;
     } else {
       borderColor = widget.defaultBorderColor;
+      pinBoxColor = widget.pinBoxColor;
     }
 
     if (widget.pinBoxDecoration != null) {
       boxDecoration = widget.pinBoxDecoration(
         borderColor,
-        widget.pinBoxColor,
+        pinBoxColor,
         borderWidth: widget.pinBoxBorderWidth,
         radius: widget.pinBoxRadius,
       );
     } else {
       boxDecoration = ProvidedPinBoxDecoration.defaultPinBoxDecoration(
         borderColor,
-        widget.pinBoxColor,
+        pinBoxColor,
         borderWidth: widget.pinBoxBorderWidth,
         radius: widget.pinBoxRadius,
       );
