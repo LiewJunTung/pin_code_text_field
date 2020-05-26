@@ -336,8 +336,8 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        _touchPinBoxRow(),
         !widget.isCupertino ? _fakeTextInput() : _fakeTextInputCupertino(),
+        _touchPinBoxRow(),
       ],
     );
   }
@@ -373,6 +373,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
       height: widget.pinBoxHeight,
       child: TextField(
         autofocus: !kIsWeb ? widget.autofocus : false,
+        enableInteractiveSelection: false,
         focusNode: focusNode,
         controller: widget.controller,
         keyboardType: widget.keyboardType,
