@@ -370,26 +370,6 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
         width: 0.0,
       ),
     );
-
-    return Stack(
-      children: <Widget>[
-        Container(
-          width: 0.1,
-          height: 16.0, // RenderBoxDecorator subtextGap constant is 8.0
-          child: TextField(
-            readOnly: widget.readonly,
-            autofocus: !kIsWeb ? widget.autofocus : false,
-            focusNode: focusNode,
-            controller: widget.controller,
-            keyboardType: widget.keyboardType,
-            inputFormatters: widget.keyboardType == TextInputType.number
-                ? <TextInputFormatter>[
-                    WhitelistingTextInputFormatter.digitsOnly
-                  ]
-                : null,
-            style: TextStyle(
-              height: 0.1, color: Colors.transparent,
-
     return Container(
       width: _width,
       height: widget.pinBoxHeight,
