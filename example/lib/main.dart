@@ -110,6 +110,7 @@ class _MyAppState extends State<MyApp> {
           )
         : new CupertinoApp(
             title: 'Flutter Demo',
+            theme: CupertinoThemeData(),
             home: cupertinoPin(),
           );
   }
@@ -190,6 +191,7 @@ class _MyAppState extends State<MyApp> {
                     pinTextAnimatedSwitcherDuration:
                         Duration(milliseconds: 300),
 //                    highlightAnimation: true,
+                    highlightPinBoxColor: Colors.red,
                     highlightAnimationBeginColor: Colors.black,
                     highlightAnimationEndColor: Colors.white12,
                     keyboardType: TextInputType.number,
