@@ -142,9 +142,11 @@ class PinCodeTextField extends StatefulWidget {
   final TextDirection textDirection;
   final TextInputType keyboardType;
   final EdgeInsets pinBoxOuterPadding;
+  final bool readonly;
 
   const PinCodeTextField({
     Key key,
+    this.readonly,
     this.isCupertino: false,
     this.maxLength: 4,
     this.controller,
@@ -372,6 +374,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
       width: _width,
       height: widget.pinBoxHeight,
       child: TextField(
+        readOnly: widget.readonly,
         autofocus: !kIsWeb ? widget.autofocus : false,
         enableInteractiveSelection: false,
         focusNode: focusNode,
@@ -382,7 +385,8 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
             : null,
         style: TextStyle(
           height: 0.1, color: Colors.transparent,
-//          color: Colors.transparent,
+
+          color: Colors.transparent,
         ),
         decoration: InputDecoration(
           focusedErrorBorder: transparentBorder,
@@ -413,6 +417,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
       width: _width,
       height: widget.pinBoxHeight,
       child: CupertinoTextField(
+        readOnly: widget.readonly,
         autofocus: !kIsWeb ? widget.autofocus : false,
         focusNode: focusNode,
         controller: widget.controller,
