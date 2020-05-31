@@ -347,16 +347,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
         ? _pinBoxRow(context)
         : GestureDetector(
             behavior: HitTestBehavior.opaque,
-            onTap: () {
-              if (hasFocus) {
-                FocusScope.of(context).requestFocus(FocusNode());
-                Future.delayed(Duration(milliseconds: 100), () {
-                  FocusScope.of(context).requestFocus(focusNode);
-                });
-              } else {
-                FocusScope.of(context).requestFocus(focusNode);
-              }
-            },
+            onTap: () => requestFocus(),
             child: _pinBoxRow(context),
           );
   }
@@ -590,6 +581,17 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
         key: ValueKey<String>("${strList[i]}$i"),
         style: widget.pinTextStyle,
       );
+    }
+  }
+
+  void requestFocus(){
+    if (hasFocus) {
+      FocusScope.of(context).requestFocus(FocusNode());
+      Future.delayed(Duration(milliseconds: 100), () {
+        FocusScope.of(context).requestFocus(focusNode);
+      });
+    } else {
+      FocusScope.of(context).requestFocus(focusNode);
     }
   }
 }
