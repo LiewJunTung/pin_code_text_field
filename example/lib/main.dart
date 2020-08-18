@@ -181,17 +181,19 @@ class _MyAppState extends State<MyApp> {
                       print("DONE $text");
                       print("DONE CONTROLLER ${controller.text}");
                     },
+                    pinBoxWidth: 50,
+                    pinBoxHeight: 64,
+                    hasUnderline: true,
                     wrapAlignment: WrapAlignment.spaceAround,
                     pinBoxDecoration:
                         ProvidedPinBoxDecoration.defaultPinBoxDecoration,
-                    pinTextStyle: TextStyle(fontSize: 30.0),
+                    pinTextStyle: TextStyle(fontSize: 22.0),
                     pinTextAnimatedSwitcherTransition:
                         ProvidedPinBoxTextAnimation.scalingTransition,
 //                    pinBoxColor: Colors.green[100],
                     pinTextAnimatedSwitcherDuration:
                         Duration(milliseconds: 300),
 //                    highlightAnimation: true,
-                    highlightPinBoxColor: Colors.red,
                     highlightAnimationBeginColor: Colors.black,
                     highlightAnimationEndColor: Colors.white12,
                     keyboardType: TextInputType.number,
@@ -201,7 +203,6 @@ class _MyAppState extends State<MyApp> {
               Visibility(
                 child: Text(
                   "Wrong PIN!",
-                  style: TextStyle(color: Colors.red),
                 ),
                 visible: hasError,
               ),

@@ -1,3 +1,6 @@
+## [1.7.0]
+* Added `hasUnderline` option in pin box.
+
 ## [1.6.0]
 * Fixed cursor in cupertino, fixed #39, fixed textarea for paste code by [SergeShkurko](https://github.com/LiewJunTung/pin_code_text_field/issues?q=is%3Apr+author%3ASergeShkurko)
 * Added highlighted pinBox backgroundColor by [heymars](https://github.com/LiewJunTung/pin_code_text_field/issues?q=is%3Apr+author%3Aheymars)
