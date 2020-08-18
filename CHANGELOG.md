@@ -1,3 +1,6 @@
+## [1.7.1]
+* Fixed underline color
+
 ## [1.7.0]
 * Added `hasUnderline` option in pin box.
 

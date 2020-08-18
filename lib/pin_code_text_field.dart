@@ -281,7 +281,6 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
     }
   }
 
-
   void _initTextController() {
     if (widget.controller == null) {
       return;
@@ -559,8 +558,11 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
           padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8),
           child: Container(
             child: Center(child: _animatedTextBox(strList[i], i)),
-            decoration: widget.hasUnderline ? BoxDecoration(
-                border: Border(bottom: BorderSide())) : null,
+            decoration: widget.hasUnderline
+                ? BoxDecoration(
+              border: Border(bottom: BorderSide(color: borderColor ?? Colors.black,),),
+            )
+                : null,
           ),
         ),
         decoration: boxDecoration,

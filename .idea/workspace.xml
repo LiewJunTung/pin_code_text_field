@@ -17,14 +17,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="454e3a70-107c-46fa-b354-df0efe7224c0" name="Default" comment="1.5.0">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+    <list default="true" id="454e3a70-107c-46fa-b354-df0efe7224c0" name="Default" comment="## [1.7.0]&#10;* Added `hasUnderline` option in pin box.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pin_code_text_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pin_code_text_field.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -294,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574357920026</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="## [1.7.0]&#10;* Added `hasUnderline` option in pin box.">
+      <created>1597740387478</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1597740387478</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView">
@@ -357,9 +359,14 @@
     <MESSAGE value="[1.4.0] Merged a few pull requests with keyboardType" />
     <MESSAGE value="fixing wrap and padding bug" />
     <MESSAGE value="1.5.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.5.0" />
+    <MESSAGE value="## [1.7.0]&#10;* Added `hasUnderline` option in pin box." />
+    <option name="LAST_COMMIT_MESSAGE" value="## [1.7.0]&#10;* Added `hasUnderline` option in pin box." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="910" y="572" width="985" height="763" key="CommitChangelistDialog2" timestamp="1597740387044">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="910" y="572" width="985" height="763" key="CommitChangelistDialog2/0.0.2560.1400/-1920.940.1920.1040@0.0.2560.1400" timestamp="1597740387044" />
     <state x="1388" y="633" key="FileChooserDialogImpl" timestamp="1597740121557">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -368,6 +375,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="703" y="456" key="SettingsEditor/0.0.2560.1400/-1920.940.1920.1040@0.0.2560.1400" timestamp="1597740136909" />
+    <state x="799" y="626" key="Vcs.Push.Dialog.v2" timestamp="1597740390808">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="799" y="626" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.940.1920.1040@0.0.2560.1400" timestamp="1597740390808" />
   </component>
   <component name="masterDetails">
     <states>
