@@ -580,22 +580,27 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
             duration: Duration(milliseconds: 100),
             curve: Curves.easeInSine,
             key: ValueKey<String>("container$i"),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8),
-              child: Container(
-                child: Center(child: _animatedTextBox(strList[i], i)),
-                decoration: widget.hasUnderline
-                    ? BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                            color: borderColor ?? Colors.black,
+            child: Container(
+              decoration: boxDecoration,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 8.0,
+                  horizontal: 8,
+                ),
+                child: Container(
+                  child: Center(child: _animatedTextBox(strList[i], i)),
+                  decoration: widget.hasUnderline
+                      ? BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(
+                              color: borderColor ?? Colors.black,
+                            ),
                           ),
-                        ),
-                      )
-                    : null,
+                        )
+                      : null,
+                ),
               ),
             ),
-            decoration: boxDecoration,
             width: pinBoxWidth,
             height: pinBoxHeight,
           ),
