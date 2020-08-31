@@ -575,7 +575,10 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
       child: Center(
         child: Padding(
           padding: insets,
-          child: Container(
+          child: AnimatedContainer(
+            // TODO: Can be exposed as well for adaptability
+            duration: Duration(milliseconds: 100),
+            curve: Curves.easeInSine,
             key: ValueKey<String>("container$i"),
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8),
