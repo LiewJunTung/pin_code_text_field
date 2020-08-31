@@ -163,40 +163,25 @@ class _MyAppState extends State<MyApp> {
                   },
                   child: PinCodeTextField(
                     autofocus: true,
-                    controller: controller,
-                    hideCharacter: true,
-                    highlight: true,
-                    highlightColor: Colors.blue,
-                    defaultBorderColor: Colors.black,
-                    hasTextBorderColor: Colors.green,
-                    maxLength: pinLength,
-                    hasError: hasError,
-                    maskCharacter: "😎",
-                    onTextChanged: (text) {
-                      setState(() {
-                        hasError = false;
-                      });
-                    },
-                    onDone: (text) {
-                      print("DONE $text");
-                      print("DONE CONTROLLER ${controller.text}");
-                    },
-                    pinBoxWidth: 50,
-                    pinBoxHeight: 64,
-                    hasUnderline: true,
-                    wrapAlignment: WrapAlignment.spaceAround,
+                    maxLength: 6,
+                    pinTextStyle: Theme.of(context)
+                        .textTheme
+                        .headline4
+                        .copyWith(fontFamily: "OpenSans"),
+                    highlightPinBoxHeight: 24,
+                    highlightPinBoxWidth: 40,
+                    pinBoxWidth: 16,
+                    pinBoxHeight: 16,
                     pinBoxDecoration:
-                        ProvidedPinBoxDecoration.defaultPinBoxDecoration,
-                    pinTextStyle: TextStyle(fontSize: 22.0),
-                    pinTextAnimatedSwitcherTransition:
-                        ProvidedPinBoxTextAnimation.scalingTransition,
-//                    pinBoxColor: Colors.green[100],
-                    pinTextAnimatedSwitcherDuration:
-                        Duration(milliseconds: 300),
-//                    highlightAnimation: true,
-                    highlightAnimationBeginColor: Colors.black,
-                    highlightAnimationEndColor: Colors.white12,
-                    keyboardType: TextInputType.number,
+                        ProvidedPinBoxDecoration.roundedPinBoxDecoration,
+                    highlightColor: Colors.red,
+                    highlightPinBoxColor: Colors.red,
+                    pinBoxColor: Colors.grey.shade300,
+                    defaultBorderColor: Colors.transparent,
+                    hasTextBorderColor: Colors.red,
+                    errorBorderColor: Colors.red,
+                    hasError: false,
+                    hideCharacter: true,
                   ),
                 ),
               ),
