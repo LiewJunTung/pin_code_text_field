@@ -169,7 +169,7 @@ class _MyAppState extends State<MyApp> {
                         .headline4
                         .copyWith(fontFamily: "OpenSans"),
                     highlightPinBoxHeight: 24,
-                    highlightPinBoxWidth: 32,
+                    highlightPinBoxWidth: 40,
                     pinBoxWidth: 16,
                     pinBoxHeight: 16,
                     pinBoxDecoration:
