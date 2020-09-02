@@ -59,6 +59,9 @@ import 'package:pin_code_text_field/pin_code_text_field.dart';
 | pinBoxColor | Color | null| Color of the pin boxes (Will be overridden by custom PinBoxDecoration) |
 | pinBoxBorderWidth | double | 2 | Border Width of pin boxes |
 | pinBoxRadius | double | 0 | The type of the input keyboard |
+| hideDefaultKeyboard | boolean | false | The type of hide default keyboard |
+| highlightPinBoxColor | Color | false | The background color of the pin box |
+| hasUnderline | bool | false | Added underline to individual pin box |
 
 ## Example
 refer to `example/lib/main.dart`
