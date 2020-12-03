@@ -180,7 +180,7 @@ class PinCodeTextField extends StatefulWidget {
     this.pinBoxRadius = 0,
     this.hideDefaultKeyboard = false,
     this.hasUnderline = false,
-    this.upperCase
+    this.upperCase = false
   }) : super(key: key);
 
   @override
