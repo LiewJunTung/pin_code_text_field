@@ -19,6 +19,7 @@
   <component name="ChangeListManager">
     <list default="true" id="454e3a70-107c-46fa-b354-df0efe7224c0" name="Default" comment="## [1.7.0]&#10;* Added `hasUnderline` option in pin box.">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
