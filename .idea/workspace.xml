@@ -18,12 +18,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="454e3a70-107c-46fa-b354-df0efe7224c0" name="Default" comment="## [1.7.0]&#10;* Added `hasUnderline` option in pin box.">
-      <change afterPath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/upper-case-text-formatter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pin_code_text_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pin_code_text_field.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -365,22 +360,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="## [1.7.0]&#10;* Added `hasUnderline` option in pin box." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="910" y="572" width="985" height="763" key="CommitChangelistDialog2" timestamp="1597740387044">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="2579" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1607026862231">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="910" y="572" width="985" height="763" key="CommitChangelistDialog2/0.0.2560.1400/-1920.940.1920.1040@0.0.2560.1400" timestamp="1597740387044" />
-    <state x="1388" y="633" key="FileChooserDialogImpl" timestamp="1597740121557">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1388" y="633" key="FileChooserDialogImpl/0.0.2560.1400/-1920.940.1920.1040@0.0.2560.1400" timestamp="1597740121557" />
-    <state x="703" y="456" key="SettingsEditor" timestamp="1597740136909">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="703" y="456" key="SettingsEditor/0.0.2560.1400/-1920.940.1920.1040@0.0.2560.1400" timestamp="1597740136909" />
-    <state x="799" y="626" key="Vcs.Push.Dialog.v2" timestamp="1597740390808">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="799" y="626" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.940.1920.1040@0.0.2560.1400" timestamp="1597740390808" />
+    <state x="2579" y="259" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/3840.0.3840.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1607026862231" />
   </component>
   <component name="masterDetails">
     <states>
