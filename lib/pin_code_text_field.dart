@@ -126,7 +126,7 @@ class PinCodeTextField extends StatefulWidget {
   final TextStyle pinTextStyle;
   final double pinBoxHeight;
   final double pinBoxWidth;
-  final OnDone onDone;
+  final OnDone? onDone;
   final bool hasError;
   final Color errorBorderColor;
   final Color hasTextBorderColor;
@@ -450,7 +450,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
     });
     if (text.length == widget.maxLength) {
       FocusScope.of(context).requestFocus(FocusNode());
-      widget.onDone(text);
+      widget.onDone?.call(text);
     }
   }
 
