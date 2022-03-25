@@ -138,6 +138,7 @@ class PinCodeTextField extends StatefulWidget {
   final WrapAlignment wrapAlignment;
   final TextDirection textDirection;
   final TextInputType keyboardType;
+  final Brightness keyboardAppearance;
   final EdgeInsets pinBoxOuterPadding;
   final bool hasUnderline;
 
@@ -171,6 +172,7 @@ class PinCodeTextField extends StatefulWidget {
     this.wrapAlignment: WrapAlignment.start,
     this.textDirection: TextDirection.ltr,
     this.keyboardType: TextInputType.number,
+    this.keyboardAppearance: Brightness.dark,
     this.pinBoxOuterPadding = const EdgeInsets.symmetric(horizontal: 4.0),
     this.pinBoxColor,
     this.highlightPinBoxColor,
@@ -375,6 +377,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
         focusNode: focusNode,
         controller: widget.controller,
         keyboardType: widget.keyboardType,
+        keyboardAppearance: widget.keyboardAppearance,
         inputFormatters: widget.keyboardType == TextInputType.number
             ? <TextInputFormatter>[WhitelistingTextInputFormatter.digitsOnly]
             : null,
@@ -415,6 +418,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
         focusNode: focusNode,
         controller: widget.controller,
         keyboardType: widget.keyboardType,
+        keyboardAppearance: widget.keyboardAppearance,
         inputFormatters: widget.keyboardType == TextInputType.number
             ? <TextInputFormatter>[WhitelistingTextInputFormatter.digitsOnly]
             : null,
