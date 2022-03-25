@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:pin_code_text_field/upper-case-text-formatter.dart';
 
 typedef OnDone = void Function(String text);
 typedef PinBoxDecoration = BoxDecoration Function(
@@ -140,6 +141,7 @@ class PinCodeTextField extends StatefulWidget {
   final TextInputType keyboardType;
   final EdgeInsets pinBoxOuterPadding;
   final bool hasUnderline;
+  final bool upperCase;
 
   const PinCodeTextField({
     Key key,
@@ -178,6 +180,7 @@ class PinCodeTextField extends StatefulWidget {
     this.pinBoxRadius = 0,
     this.hideDefaultKeyboard = false,
     this.hasUnderline = false,
+    this.upperCase = false
   }) : super(key: key);
 
   @override
@@ -377,6 +380,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
         keyboardType: widget.keyboardType,
         inputFormatters: widget.keyboardType == TextInputType.number
             ? <TextInputFormatter>[WhitelistingTextInputFormatter.digitsOnly]
+            : widget.upperCase ? [UpperCaseTextFormatter()]
             : null,
         style: TextStyle(
           height: 0.1, color: Colors.transparent,
@@ -417,6 +421,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
         keyboardType: widget.keyboardType,
         inputFormatters: widget.keyboardType == TextInputType.number
             ? <TextInputFormatter>[WhitelistingTextInputFormatter.digitsOnly]
+            : widget.upperCase ? [UpperCaseTextFormatter()]
             : null,
         style: TextStyle(
           color: Colors.transparent,
