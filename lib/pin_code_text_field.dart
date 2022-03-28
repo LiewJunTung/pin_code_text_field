@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart' show CupertinoTextField;
@@ -439,13 +440,10 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
     }
     setState(() {
       this.text = text;
-      if (text.length < currentIndex) {
-        strList[text.length] = "";
-      } else {
-        for (int i = currentIndex; i < text.length; i++) {
-          strList[i] = widget.hideCharacter ? widget.maskCharacter : text[i];
-        }
-      }
+      strList =
+          (widget.hideCharacter ? widget.maskCharacter * text.length : text)
+              .padRight(max(widget.maxLength - text.length, 0))
+              .split("");
       currentIndex = text.length;
     });
     if (text.length == widget.maxLength) {
