@@ -138,7 +138,7 @@ class PinCodeTextField extends StatefulWidget {
   final EdgeInsets pinBoxOuterPadding;
   final bool hasUnderline;
   //final TextCapitalization? textCapitalization;
-  final TextInputFormatter? inputFormatter;
+  final List<TextInputFormatter>? inputFormatter;
 
   const PinCodeTextField({
     Key? key,
@@ -370,7 +370,9 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
       inputFormatters.add(FilteringTextInputFormatter.digitsOnly);
     }
     if(widget.inputFormatter != null) {
-      inputFormatters.add(widget.inputFormatter!) ; //UpperCaseTextFormatter());
+      widget.inputFormatter!.forEach((element) {
+        inputFormatters.add(element) ; //UpperCaseTextFormatter());
+      });
     }
     return inputFormatters;
   }
