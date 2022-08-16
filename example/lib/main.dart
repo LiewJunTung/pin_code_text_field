@@ -128,7 +128,7 @@ class _MyAppState extends State<MyApp> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(bottom: 60.0),
-                child: Text(thisText, style: Theme.of(context).textTheme.title),
+                child: Text(thisText, style: Theme.of(context).textTheme.titleMedium),
               ),
               Container(
                 height: 100.0,
@@ -169,6 +169,11 @@ class _MyAppState extends State<MyApp> {
                     highlightColor: Colors.blue,
                     defaultBorderColor: Colors.black,
                     hasTextBorderColor: Colors.green,
+                    /**
+                     * Fix error in library
+                     */
+                    pinBoxColor: Colors.transparent,
+                    highlightPinBoxColor: Colors.transparent,
                     maxLength: pinLength,
                     hasError: hasError,
                     maskCharacter: "😎",
