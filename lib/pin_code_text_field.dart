@@ -371,7 +371,7 @@ class PinCodeTextFieldState extends State<PinCodeTextField>
       height: widget.pinBoxHeight,
       child: TextField(
         autofocus: !kIsWeb ? widget.autofocus : false,
-        enableInteractiveSelection: false,
+        enableInteractiveSelection: true,
         focusNode: focusNode,
         controller: widget.controller,
         keyboardType: widget.keyboardType,
