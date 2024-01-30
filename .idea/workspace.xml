@@ -17,11 +17,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="454e3a70-107c-46fa-b354-df0efe7224c0" name="Default" comment="## [1.7.0]&#10;* Added `hasUnderline` option in pin box.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pin_code_text_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pin_code_text_field.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="454e3a70-107c-46fa-b354-df0efe7224c0" name="Default" comment="## [1.7.0]&#10;* Added `hasUnderline` option in pin box." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,28 +38,23 @@
       <GitPushTagMode />
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1cRlJjntKCW2SGMKGWOI7bDoufz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="ScreenshotViewer.SavePath" value="$USER_HOME$/Desktop" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/liewjuntung/Dev/pin_code_text_field/example/lib/main.dart&#10;main&#9;FILE&#9;file:///Users/juntung/Dev/OpenSource/pin_code_text_field/example/lib/main.dart&#10;README&#9;FILE&#9;file:///Users/juntung/Dev/OpenSource/pin_code_text_field/README.md" />
-    <property name="dart.analysis.tool.window.force.activate" value="false" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/Application/flutter_windows_1.17.1-stable/flutter/bin" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
-    <property name="show.migrate.to.gradle.popup" value="false" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib" />
@@ -74,10 +65,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Flutter.pin_code_text_field">
-    <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -91,7 +78,15 @@
     <configuration name="adds one to input values" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testName" value="adds one to input values" />
       <option name="testFile" value="$PROJECT_DIR$/test/pin_code_text_field_test.dart" />
+      <option name="useRegexp" value="false" />
       <method v="2" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
@@ -103,6 +98,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -332,7 +328,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -361,24 +356,6 @@
     <MESSAGE value="1.5.0" />
     <MESSAGE value="## [1.7.0]&#10;* Added `hasUnderline` option in pin box." />
     <option name="LAST_COMMIT_MESSAGE" value="## [1.7.0]&#10;* Added `hasUnderline` option in pin box." />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="910" y="572" width="985" height="763" key="CommitChangelistDialog2" timestamp="1597740387044">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="910" y="572" width="985" height="763" key="CommitChangelistDialog2/0.0.2560.1400/-1920.940.1920.1040@0.0.2560.1400" timestamp="1597740387044" />
-    <state x="1388" y="633" key="FileChooserDialogImpl" timestamp="1597740121557">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1388" y="633" key="FileChooserDialogImpl/0.0.2560.1400/-1920.940.1920.1040@0.0.2560.1400" timestamp="1597740121557" />
-    <state x="703" y="456" key="SettingsEditor" timestamp="1597740136909">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="703" y="456" key="SettingsEditor/0.0.2560.1400/-1920.940.1920.1040@0.0.2560.1400" timestamp="1597740136909" />
-    <state x="799" y="626" key="Vcs.Push.Dialog.v2" timestamp="1597740390808">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="799" y="626" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.940.1920.1040@0.0.2560.1400" timestamp="1597740390808" />
   </component>
   <component name="masterDetails">
     <states>
